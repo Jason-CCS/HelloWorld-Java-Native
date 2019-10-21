@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         metadata-complete="true" version="3.0">
+
+
+    <servlet>
+        <servlet-name>HelloWorld</servlet-name>
+        <servlet-class>com.jason.app.HelloWorld</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>HelloForm</servlet-name>
+        <servlet-class>com.jason.app.HelloForm</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ReadCookies</servlet-name>
+        <servlet-class>com.jason.app.ReadCookies</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloWorld</servlet-name>
+        <url-pattern>/HelloWorld</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HelloForm</servlet-name>
+        <url-pattern>/HelloForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ReadCookies</servlet-name>
+        <url-pattern>/ReadCookies</url-pattern>
+    </servlet-mapping>
+</web-app>

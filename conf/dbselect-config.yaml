@@ -1,0 +1,8 @@
+!dbselect-config
+JDBCClassDriver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+poolSize: 5
+dataSourceList:
+  - name: test
+    url: 'jdbc:sqlserver://ST02CPS04'
+    username: bigdata
+    passwd: 0123456

@@ -1,0 +1,13 @@
+Java NIO comes with the following Buffer types:
+
+ByteBuffer
+MappedByteBuffer
+CharBuffer
+DoubleBuffer
+FloatBuffer
+IntBuffer
+LongBuffer
+ShortBuffer
+As you can see, these Buffer types represent different data types. In other words, they let you work with the bytes in the buffer as char, short, int, long, float or double instead.
+
+The MappedByteBuffer is a bit special, and will be covered in its own text.

@@ -1,0 +1,12 @@
+2015.04.14 16:39:09 TST INFO  com.jason.app.HelloLog4j2$1 23 run - testReload info
+2015.04.14 16:39:09 TST WARN  com.jason.app.HelloLog4j2$1 24 run - testReload warn
+2015.04.14 16:39:09 TST ERROR com.jason.app.HelloLog4j2$1 25 run - testReload error
+2015.04.14 16:39:10 TST INFO  com.jason.app.HelloLog4j2$1 23 run - testReload info
+2015.04.14 16:39:10 TST WARN  com.jason.app.HelloLog4j2$1 24 run - testReload warn
+2015.04.14 16:39:10 TST ERROR com.jason.app.HelloLog4j2$1 25 run - testReload error
+2015.04.14 16:39:11 TST INFO  com.jason.app.HelloLog4j2$1 23 run - testReload info
+2015.04.14 16:39:11 TST WARN  com.jason.app.HelloLog4j2$1 24 run - testReload warn
+2015.04.14 16:39:11 TST ERROR com.jason.app.HelloLog4j2$1 25 run - testReload error
+2015.04.14 16:39:12 TST INFO  com.jason.app.HelloLog4j2$1 23 run - testReload info
+2015.04.14 16:39:12 TST WARN  com.jason.app.HelloLog4j2$1 24 run - testReload warn
+2015.04.14 16:39:12 TST ERROR com.jason.app.HelloLog4j2$1 25 run - testReload error
