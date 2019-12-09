@@ -12,6 +12,7 @@ class ParentClass {
     ParentClass(){
         System.out.println("parent");
         System.out.println(this);
+        System.out.println(s);
     }
 }
 
@@ -20,5 +21,6 @@ class ChildClass extends ParentClass {
         this.s = "in ChildClass";
         System.out.println("child");
         System.out.println(this);
+        System.out.println(s);
     }
 }
