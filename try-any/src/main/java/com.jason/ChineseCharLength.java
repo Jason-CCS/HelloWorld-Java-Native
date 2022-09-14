@@ -1,7 +1,6 @@
 package com.jason;
 
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 
 /**
  * Created by jc6t on 2015/3/16.

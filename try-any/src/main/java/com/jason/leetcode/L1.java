@@ -1,10 +1,10 @@
-package com.jason;
+package com.jason.leetcode;
 
 import java.util.*;
 
-public class Solution {
+public class L1 {
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        L1 sol = new L1();
         System.out.println(sol.solution(1, 5, 100));
     }
 
