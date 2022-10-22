@@ -1,6 +1,10 @@
 package com.jason.leetcode;
 
-public class RomanToInteger {
+/**
+ * this is my version.
+ * There is one better solution is: compare if s[i] < s[i+1], then toInt(s[i+1]) - toInt(s[i])
+ */
+public class S13 {
     private static final char[] ixc = {'I', 'X', 'C'};
 
     public int romanToInt(String s) {
@@ -64,17 +68,17 @@ public class RomanToInteger {
     }
 
     public static void main(String[] args) {
-        System.out.println(new RomanToInteger().romanToInt("I"));
-        System.out.println(new RomanToInteger().romanToInt("III"));
-        System.out.println(new RomanToInteger().romanToInt("IV"));
-        System.out.println(new RomanToInteger().romanToInt("VI"));
-        System.out.println(new RomanToInteger().romanToInt("IX"));
-        System.out.println(new RomanToInteger().romanToInt("XI"));
-        System.out.println(new RomanToInteger().romanToInt("XL"));
-        System.out.println(new RomanToInteger().romanToInt("XC"));
-        System.out.println(new RomanToInteger().romanToInt("CD"));
-        System.out.println(new RomanToInteger().romanToInt("CM"));
-        System.out.println(new RomanToInteger().romanToInt("MMMCMXCIX"));
-        System.out.println(new RomanToInteger().romanToInt("IVXLCDM"));
+        System.out.println(new S13().romanToInt("I"));
+        System.out.println(new S13().romanToInt("III"));
+        System.out.println(new S13().romanToInt("IV"));
+        System.out.println(new S13().romanToInt("VI"));
+        System.out.println(new S13().romanToInt("IX"));
+        System.out.println(new S13().romanToInt("XI"));
+        System.out.println(new S13().romanToInt("XL"));
+        System.out.println(new S13().romanToInt("XC"));
+        System.out.println(new S13().romanToInt("CD"));
+        System.out.println(new S13().romanToInt("CM"));
+        System.out.println(new S13().romanToInt("MMMCMXCIX"));
+        System.out.println(new S13().romanToInt("IVXLCDM"));
     }
 }
