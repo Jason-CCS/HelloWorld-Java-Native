@@ -1,4 +1,4 @@
-package com.jason.leetcode;
+package com.jason;
 
 /**
  * this is my version.

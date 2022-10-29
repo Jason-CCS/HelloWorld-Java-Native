@@ -1,4 +1,4 @@
-package com.jason.leetcode;
+package com.jason;
 
 /**
  * recursive的寫法簡潔，但是可讀性比較差。
