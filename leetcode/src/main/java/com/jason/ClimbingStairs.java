@@ -2,15 +2,15 @@ package com.jason;
 
 public class ClimbingStairs {
     public int climbStairs(int n) {
-        return f(n, new int[n + 1]);
+        return fibonacciLike(n, new int[n + 1]);
     }
 
-    public int f(int n, int[] cache) {
+    public int fibonacciLike(int n, int[] cache) {
         if (n <= 2) {
             return n;
         }
         if (cache[n] == 0) {
-            cache[n] = f(n - 1, cache) + f(n - 2, cache);
+            cache[n] = fibonacciLike(n - 1, cache) + fibonacciLike(n - 2, cache);
         }
         return cache[n];
     }
