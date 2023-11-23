@@ -1,0 +1,30 @@
+package com.jason;
+
+public class ClimbingStairs {
+    public int climbStairs(int n) {
+        return f(n, new int[n + 1]);
+    }
+
+    public int f(int n, int[] cache) {
+        if (n <= 2) {
+            return n;
+        }
+        if (cache[n] == 0) {
+            cache[n] = f(n - 1, cache) + f(n - 2, cache);
+        }
+        return cache[n];
+    }
+
+    public static void main(String[] args) {
+        ClimbingStairs cs = new ClimbingStairs();
+        System.out.println(cs.climbStairs(0));
+        System.out.println(cs.climbStairs(1));
+        System.out.println(cs.climbStairs(2));
+        System.out.println(cs.climbStairs(3));
+        System.out.println(cs.climbStairs(4));
+        System.out.println(cs.climbStairs(5));
+        System.out.println(cs.climbStairs(6));
+        System.out.println(cs.climbStairs(7));
+        System.out.println(cs.climbStairs(45));
+    }
+}
