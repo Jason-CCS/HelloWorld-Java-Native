@@ -2,6 +2,10 @@ package com.jason;
 
 import java.util.Arrays;
 
+/**
+ * Great practice to practice the merge sort.
+ * The merge function here basically is the core part "merge" in MergeSort algorithm.
+ */
 public class MergeSortedArray {
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {

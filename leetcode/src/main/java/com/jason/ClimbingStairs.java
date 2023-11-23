@@ -1,5 +1,10 @@
 package com.jason;
 
+/**
+ * This is the variant of Fibonacci sequence.
+ * Good to practice the Dynamic Programming.
+ * Dynamic Programming is using the cache to remember what you had calculated before.
+ */
 public class ClimbingStairs {
     public int climbStairs(int n) {
         return fibonacciLike(n, new int[n + 1]);
