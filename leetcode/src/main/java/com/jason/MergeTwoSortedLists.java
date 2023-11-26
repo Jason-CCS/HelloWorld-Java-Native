@@ -64,7 +64,7 @@ public class MergeTwoSortedLists {
 
         ListNode list5 = null;
         ListNode list6 = new ListNode(0);
-        ListNode resultNode3 = new MergeTwoSortedLists().mergeTwoLists(list1, list2);
+        ListNode resultNode3 = new MergeTwoSortedLists().mergeTwoLists(list5, list6);
         System.out.println();
     }
 }
