@@ -3,6 +3,9 @@ package com.jason;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The stack problem.
+ */
 public class ValidParentheses {
     public boolean isValid(String s) {
         List<Character> closeChars = Arrays.asList(')', ']', '}');
