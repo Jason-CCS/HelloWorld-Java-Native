@@ -1,4 +1,4 @@
-package com.jason;
+package com.jason.hack_rank;
 
 import java.util.*;
 
