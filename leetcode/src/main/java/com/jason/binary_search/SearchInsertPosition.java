@@ -8,7 +8,7 @@ package com.jason.binary_search;
  * The reason of resulting value 3 is because of your start rightPointer is nums.length-1 instead of nums.length.
  * Which means if you have the starting condition are int leftPointer=0, rightPointer=nums.length-1, midPointer,
  * you will get the wrong answer because you will never reach the index = 4.
- * (your leftPointer is 0 and rightPointer is 3 only.)
+ * (your leftPointer is 0 and rightPointer is 3 only. 4 is out of the possible range.)
  */
 public class SearchInsertPosition {
     public int searchInsert(int[] nums, int target) {
