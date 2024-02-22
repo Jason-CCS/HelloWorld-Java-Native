@@ -1,4 +1,4 @@
-package com.jason;
+package com.jason.array;
 
 import java.util.Arrays;
 
