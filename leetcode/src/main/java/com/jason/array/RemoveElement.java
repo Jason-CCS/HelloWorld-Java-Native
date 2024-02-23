@@ -6,7 +6,7 @@ import java.util.Arrays;
  * This is a two-pointer problem. Very good one to practice the two-pointer technique.
  * Two-pointer technique can make the time complexity only O(n). It's fantastic.
  * The critical points are:
- * 1. The pointer at intersection area should be "<" or "<=" is the key point.
+ * 1. The pointer at intersection area should be "<" or "<=" (counterpart is ">" or ">=") is the key point.
  * 2. Start position and end position should be carefully considered.
  * <p>
  * Using this problem as the example,
@@ -19,7 +19,6 @@ import java.util.Arrays;
  * So it comes down to a key point which is are you clear enough with your visited criteria?
  */
 public class RemoveElement {
-
     public static int removeElement(int[] nums, int val) {
         int counterK = 0, lp = 0, rp = nums.length - 1, tmp;
         // how do I identify "<=" or "<" as early as possible?
