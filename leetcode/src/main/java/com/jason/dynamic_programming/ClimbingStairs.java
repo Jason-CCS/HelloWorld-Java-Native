@@ -1,4 +1,4 @@
-package com.jason;
+package com.jason.dynamic_programming;
 
 /**
  * This is the variant of Fibonacci sequence.

@@ -1,10 +1,37 @@
 package com.jason.array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * this is my version.
- * There is one better solution is: compare if s[i] < s[i+1], then toInt(s[i+1]) - toInt(s[i])
+ * The version 2 is the best solution from LeetCode solutions:
+ * It compares whether s[i] < s[i+1]. If it is, then we sum = sum + toInt(s[i+1]) - toInt(s[i])
  */
 public class RomanToInteger {
+    static Map<Character, Integer> romanMap = Map.ofEntries(
+            Map.entry('I', 1),
+            Map.entry('V', 5),
+            Map.entry('X', 10),
+            Map.entry('L', 50),
+            Map.entry('C', 100),
+            Map.entry('D', 500),
+            Map.entry('M', 1000)
+    );
+    public static int romanToIntVersion2(String s) {
+        int sum = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (i != s.length() - 1 && romanMap.get(s.charAt(i)) < romanMap.get(s.charAt(i + 1))) {
+                sum = sum + romanMap.get(s.charAt(i + 1)) - romanMap.get(s.charAt(i));
+                i++;
+            } else {
+                sum = sum + romanMap.get(s.charAt(i));
+            }
+        }
+
+        return sum;
+    }
+
     private static final char[] ixc = {'I', 'X', 'C'};
 
     public int romanToInt(String s) {
@@ -68,17 +95,12 @@ public class RomanToInteger {
     }
 
     public static void main(String[] args) {
-        System.out.println(new RomanToInteger().romanToInt("I"));
-        System.out.println(new RomanToInteger().romanToInt("III"));
-        System.out.println(new RomanToInteger().romanToInt("IV"));
-        System.out.println(new RomanToInteger().romanToInt("VI"));
-        System.out.println(new RomanToInteger().romanToInt("IX"));
-        System.out.println(new RomanToInteger().romanToInt("XI"));
-        System.out.println(new RomanToInteger().romanToInt("XL"));
-        System.out.println(new RomanToInteger().romanToInt("XC"));
-        System.out.println(new RomanToInteger().romanToInt("CD"));
-        System.out.println(new RomanToInteger().romanToInt("CM"));
-        System.out.println(new RomanToInteger().romanToInt("MMMCMXCIX"));
-        System.out.println(new RomanToInteger().romanToInt("IVXLCDM"));
+//        System.out.println(new RomanToInteger().romanToInt("III"));
+//        System.out.println(new RomanToInteger().romanToInt("LVIII"));
+//        System.out.println(new RomanToInteger().romanToInt("MCMXCIV"));
+
+        System.out.println(romanToIntVersion2("III"));
+        System.out.println(romanToIntVersion2("LVIII"));
+        System.out.println(romanToIntVersion2("MCMXCIV"));
     }
 }
