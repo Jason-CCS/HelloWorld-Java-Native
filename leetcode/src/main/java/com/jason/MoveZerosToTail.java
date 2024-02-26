@@ -3,7 +3,7 @@ package com.jason;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem {
+public class MoveZerosToTail {
     public static void main(String[] args) {
         int[] asdf = {1, 2};
 

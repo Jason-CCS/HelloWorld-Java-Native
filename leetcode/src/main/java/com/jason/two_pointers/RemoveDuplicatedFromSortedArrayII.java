@@ -1,4 +1,4 @@
-package com.jason.array;
+package com.jason.two_pointers;
 
 import java.util.Arrays;
 
@@ -18,7 +18,7 @@ import java.util.Arrays;
  * This is the key point to solve this problem.
  * <p></p>
  * The version 3 is the best solution from LeetCode solutions:
- * The pointer maxLengthPointer indicate the position which has to be replaced by nums[i] anyway once the index is higher than 1.
+ * The pointer maxLengthPointer indicate the position which has to be replaced by nums[i] anyway once the index is greater than 1.
  * And the position nums[maxLengthPointer] where you want to replaced by nums[i] does not allow the number is equal to nums[maxLengthPointer-2].
  * If we allow this case, then we will get the three identical number consecutively.
  * This is the key situation we want to avoid.

@@ -1,4 +1,4 @@
-package com.jason;
+package com.jason.sliding_window;
 
 import java.util.HashMap;
 

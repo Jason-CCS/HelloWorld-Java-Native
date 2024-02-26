@@ -1,4 +1,4 @@
-package com.jason.array;
+package com.jason.two_pointers;
 
 import java.util.Arrays;
 
@@ -6,16 +6,16 @@ public class RemoveDuplicatedFromSortedArray {
     public static int removeDuplicates(int[] nums) {
         // this starts from 1 because number of index 0 is anyway unique to other numbers
         // so there is no sense to use index 0 as the able-to-stored position.
-        int storePointer = 1; // storePointer is the number of unique elements.
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[i - 1]) {
+        int maxLengthPointer = 0; // maxLengthPointer is the number of unique elements.
+        for (int i = 0; i < nums.length; i++) {
+            if (i == 0 || nums[i] != nums[maxLengthPointer - 1]) {
                 // find the first nums[i]!=nums[i-1] and store in the
                 // position where is the next able-to-stored position.
-                nums[storePointer] = nums[i];
-                storePointer++;
+                nums[maxLengthPointer] = nums[i];
+                maxLengthPointer++;
             }
         }
-        return storePointer;
+        return maxLengthPointer;
     }
 
     public static void main(String[] args) {
