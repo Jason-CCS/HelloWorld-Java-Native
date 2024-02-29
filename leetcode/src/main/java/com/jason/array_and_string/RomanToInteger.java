@@ -1,4 +1,4 @@
-package com.jason.array;
+package com.jason.array_and_string;
 
 import java.util.Map;
 

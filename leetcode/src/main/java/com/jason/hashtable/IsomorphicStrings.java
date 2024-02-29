@@ -1,4 +1,4 @@
-package com.jason;
+package com.jason.hashtable;
 
 import java.util.*;
 

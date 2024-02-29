@@ -1,4 +1,4 @@
-package com.jason;
+package com.jason.linkedlist;
 
 /**
  * recursive的寫法簡潔，但是可讀性比較差。

@@ -1,4 +1,4 @@
-package com.jason;
+package com.jason.two_pointers;
 
 import java.util.ArrayList;
 import java.util.List;

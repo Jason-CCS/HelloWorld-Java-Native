@@ -1,4 +1,4 @@
-package com.jason.binary_search;
+package com.jason.sort_and_search.binary_search;
 
 public class BinarySearch {
     public int search(int[] nums, int target) {

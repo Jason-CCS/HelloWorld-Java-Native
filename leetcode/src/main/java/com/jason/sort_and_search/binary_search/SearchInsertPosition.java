@@ -1,4 +1,4 @@
-package com.jason.binary_search;
+package com.jason.sort_and_search.binary_search;
 
 /**
  * In this kind of position finding problem, we have to be very careful of the return position.

@@ -1,4 +1,4 @@
-package com.jason.string;
+package com.jason.array_and_string;
 
 import java.util.Arrays;
 import java.util.LinkedList;

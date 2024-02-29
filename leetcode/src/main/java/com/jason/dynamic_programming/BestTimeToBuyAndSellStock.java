@@ -1,5 +1,13 @@
 package com.jason.dynamic_programming;
 
+/**
+ * Problem 121.
+ * This solution is especially for this problem.
+ * Since we can only sell the stock later than the stock you buy,
+ * so we can get the min by update from line 17.
+ * And only update the maxProfit for those future prices is greater than min.
+ * Finally, we will have the maxProfit.
+ */
 public class BestTimeToBuyAndSellStock {
     public static int maxProfit(int[] prices) {
         int min = prices[0], maxProfit = 0;

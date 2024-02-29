@@ -1,4 +1,4 @@
-package com.jason;
+package com.jason.two_pointers;
 
 public class ValidPalindrome {
     public boolean isPalindrome(String s) {

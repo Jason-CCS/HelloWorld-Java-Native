@@ -1,4 +1,4 @@
-package com.jason.string;
+package com.jason.array_and_string;
 
 /**
  * This one is quite easy. Go from the tail is faster but rather tricky.
