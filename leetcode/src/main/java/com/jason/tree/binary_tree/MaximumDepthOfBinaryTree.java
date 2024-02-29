@@ -1,4 +1,4 @@
-package com.jason;
+package com.jason.tree.binary_tree;
 
 /**
  * To practice Binary Tree and DFS.

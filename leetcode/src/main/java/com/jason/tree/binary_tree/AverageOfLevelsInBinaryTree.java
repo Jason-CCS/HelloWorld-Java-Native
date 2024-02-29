@@ -1,4 +1,4 @@
-package com.jason;
+package com.jason.tree.binary_tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

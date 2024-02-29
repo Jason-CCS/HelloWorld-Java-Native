@@ -5,7 +5,9 @@ package com.jason.dynamic_programming;
  * This solution is from the discussion with the colleagues.
  * This is really the good solution if you encounter the same scenario.
  * The price is going up and down.
- * The sum of every small interval(prices[i+1]>prices[i]) transactions is greater than a few times of max profit transactions.
+ * The key is:
+ * The sum of every small interval(prices[i+1]>prices[i]) positive transactions is greater than a few times of max profit transactions.
+ * This can be applied to real market as well if all the historical data are visible. (But it is impossible. XDDD)
  */
 public class BestTimeToBuyAndSellStockII {
     public static int maxProfit(int[] prices) {
