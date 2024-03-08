@@ -17,6 +17,11 @@ public class HyTech {
         return maxProfit;
     }
 
+    /**
+     * Time complexity is O(n*k) k is the count of prime number less than n.
+     * @param n
+     * @return
+     */
     public static int primeCount(int n) {
         List<Integer> primeList = new ArrayList<>();
         boolean flag = true;

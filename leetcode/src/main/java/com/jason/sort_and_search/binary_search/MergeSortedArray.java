@@ -1,4 +1,4 @@
-package com.jason.sort_and_search.binary_search.merge_sort;
+package com.jason.sort_and_search.binary_search;
 
 import java.util.Arrays;
 
