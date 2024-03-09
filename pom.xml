@@ -8,9 +8,16 @@
     <artifactId>HelloWorld-Java-Native</artifactId>
     <version>1.0</version>
     <modules>
+        <module>helloworld-design-pattern</module>
         <module>leetcode</module>
         <module>try-any</module>
     </modules>
     <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.9</maven.compiler.source>
+        <maven.compiler.target>1.9</maven.compiler.target>
+    </properties>
 
 </project>

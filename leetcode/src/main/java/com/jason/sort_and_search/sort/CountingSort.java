@@ -10,23 +10,23 @@ import java.util.Arrays;
  * Calculate the prefix sum at every index of array inputArray[].
  * Create an array outputArray[] of size N.
  * Traverse array inputArray[] from end and update outputArray[ countArray[ inputArray[i] ] – 1] = inputArray[i]. Also, update countArray[ inputArray[i] ] = countArray[ inputArray[i] ]--.
- * time complexity: average O(k+n)
+ * Best O(n+k), Average O(n+k), Worst O(n+k).
  */
 public class CountingSort {
 
-    public static int[] countSort(int[] inputArray) {
+    public static int[] countSort(int[] inputAry) {
         int max = 0;
-        int n = inputArray.length;
+        int n = inputAry.length;
 
         for (int i = 0; i < n; i++) { // O(n)
-            max = Math.max(max, inputArray[i]);
+            max = Math.max(max, inputAry[i]);
         }
 
         int[] countAry = new int[max + 1];
         int k = countAry.length;
 
         for (int i = 0; i < n; i++) { // counting, O(n)
-            countAry[inputArray[i]]++;
+            countAry[inputAry[i]]++;
         }
 
         for (int i = 1; i < k; i++) { // get the prefix sum (cumulative sum). This sum will be the index for outputAry, O(k)
@@ -36,8 +36,8 @@ public class CountingSort {
         int[] outputAry = new int[n];
 
         for (int i = n - 1; i >= 0; i--) { // traverse from tail to maintain the array order stability, O(n)
-            outputAry[countAry[inputArray[i]] - 1] = inputArray[i];
-            countAry[inputArray[i]]--;
+            outputAry[countAry[inputAry[i]] - 1] = inputAry[i];
+            countAry[inputAry[i]]--;
         }
 
         return outputAry;

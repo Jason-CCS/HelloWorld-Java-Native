@@ -1,4 +1,4 @@
-package com.jason.dynamic_programming;
+package com.jason.dp;
 
 /**
  * Star Five.

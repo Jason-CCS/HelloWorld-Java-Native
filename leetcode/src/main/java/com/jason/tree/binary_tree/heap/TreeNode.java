@@ -28,4 +28,8 @@ public class TreeNode {
     public String toString() {
         return Integer.toString(val);
     }
+
+    public int getVal(){
+        return this.val;
+    }
 }

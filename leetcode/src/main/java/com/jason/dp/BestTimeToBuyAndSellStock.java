@@ -1,4 +1,4 @@
-package com.jason.dynamic_programming;
+package com.jason.dp;
 
 /**
  * Problem 121.
