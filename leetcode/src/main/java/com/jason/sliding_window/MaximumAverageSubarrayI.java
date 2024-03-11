@@ -2,7 +2,7 @@ package com.jason.sliding_window;
 
 /**
  * Problem: 643
- * Topic: Sliding Window
+ * Difficulty: Easy
  */
 public class MaximumAverageSubarrayI {
 

@@ -3,7 +3,8 @@ package com.jason.sliding_window;
 import java.util.HashMap;
 
 /**
- * Sliding window, HashTable, String
+ * Problem: 3
+ * Difficulty: Medium
  * Sliding window 目前看起來是可以以兩個index匡起來的一個視窗，在這邊就是i, j，以一個for跑i跟j就可以像一個視窗檢視裡面的狀況
  */
 public class LongestSubstringWithoutRepeatingCharacters {

@@ -5,7 +5,7 @@ import java.util.Hashtable;
 
 /**
  * Problem: 219
- * Topic: Sliding Window
+ * Difficulty: Easy
  */
 public class ContainsDuplicateII {
 
