@@ -1,4 +1,4 @@
-package com.jason.sort_and_search.sort;
+package com.jason.sort_and_search;
 
 import java.util.Arrays;
 

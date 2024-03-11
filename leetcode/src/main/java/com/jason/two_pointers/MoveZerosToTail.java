@@ -5,7 +5,9 @@ import java.util.List;
 
 /**
  * This is the problem from Netscope manager.
- * Please move all the zeros of a random number array to the last.
+ * Problem: Please move all the zeros of a random number array to the last.
+ * Topic: two-pointers
+ * Time complexity: O(n)
  */
 public class MoveZerosToTail {
     public static int[] moveZeros(int[] inputAry) {
