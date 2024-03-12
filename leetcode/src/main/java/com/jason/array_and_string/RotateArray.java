@@ -5,7 +5,8 @@ import java.util.Arrays;
 import java.util.Map;
 
 /**
- * Medium
+ * Problem: 189
+ * Difficulty: Medium
  */
 public class RotateArray {
     /**

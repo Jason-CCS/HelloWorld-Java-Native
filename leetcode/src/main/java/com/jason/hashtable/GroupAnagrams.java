@@ -10,7 +10,11 @@ public class GroupAnagrams {
 
     /**
      * The first version.
-     * I think this solution is fair enough.
+     * I think this solution is fair enough. I use the way as below to represent the letter combination.
+     * And use letter combination as the HashMap key.
+     * Example: tee, ete, eet => 2e1t
+     * Example: banana, aaabnn, abanan => 3a1b2n
+     * letter is in natural order by TreeMap.
      * Time Complexity: O(n*(c+e))
      * @param strs
      * @return
