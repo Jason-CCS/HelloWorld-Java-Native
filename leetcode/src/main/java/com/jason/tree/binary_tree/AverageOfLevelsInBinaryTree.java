@@ -5,6 +5,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Problem: 637
+ * Difficulty: Easy
+ */
 public class AverageOfLevelsInBinaryTree {
     public List<Double> averageOfLevels(TreeNode root) {
         ArrayList<Double> sumList = new ArrayList<>();
