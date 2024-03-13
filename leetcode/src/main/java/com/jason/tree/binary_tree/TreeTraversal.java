@@ -16,31 +16,15 @@ public class TreeTraversal {
         if (root == null) return;
 
         // visit parent first
-        visitFunction.test(root.val);
+        visitFunction.apply(root.val);
         dfs(root.left, visitFunction);
         dfs(root.right, visitFunction);
     }
 
-    public static class VisitFunction<Integer> implements Predicate<Integer> {
-
+    public static class VisitFunction<Integer> implements Function<Integer, Integer> {
         @Override
-        public boolean test(Integer integer) {
-            return false;
-        }
-
-        @Override
-        public Predicate<Integer> and(Predicate<? super Integer> other) {
-            return Predicate.super.and(other);
-        }
-
-        @Override
-        public Predicate<Integer> negate() {
-            return Predicate.super.negate();
-        }
-
-        @Override
-        public Predicate<Integer> or(Predicate<? super Integer> other) {
-            return Predicate.super.or(other);
+        public Integer apply(Integer integer) {
+            return null;
         }
     }
 
@@ -50,12 +34,11 @@ public class TreeTraversal {
      * @param root
      */
     public static void bfs(TreeNode root, VisitFunction<Integer> visitFunction) {
-        if (root == null) return;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             TreeNode curNode = queue.poll();
-            visitFunction.test(curNode.val);
+            visitFunction.apply(curNode.val);
             if (curNode.left!=null) queue.offer(curNode.left);
             if (curNode.right!=null) queue.offer(curNode.right);
         }

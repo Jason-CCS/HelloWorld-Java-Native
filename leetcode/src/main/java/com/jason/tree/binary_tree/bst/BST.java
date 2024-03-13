@@ -1,4 +1,4 @@
-package com.jason.hack_rank;
+package com.jason.tree.binary_tree.bst;
 
 /**
  * HackRank
