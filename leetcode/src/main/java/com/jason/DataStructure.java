@@ -61,11 +61,20 @@ public class DataStructure {
         obj = heap.poll();
 
         /**
-         * Graph
-         */
-
-        /**
          * Matrix
          */
+        int[][] matrix = new int[5][5];
+    }
+
+    /**
+     * Graph
+     */
+    static class Node{
+        public String name;
+        public Node[] children;
+    }
+
+    static class Graph{
+        public Node[] nodes;
     }
 }

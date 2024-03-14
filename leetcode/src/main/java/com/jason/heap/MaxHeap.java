@@ -1,4 +1,4 @@
-package com.jason.tree.binary_tree.heap;
+package com.jason.heap;
 
 import java.util.ArrayList;
 

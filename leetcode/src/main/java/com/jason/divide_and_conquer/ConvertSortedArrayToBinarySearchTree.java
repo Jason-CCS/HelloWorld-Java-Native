@@ -4,6 +4,7 @@ package com.jason.divide_and_conquer;
 /**
  * Problem: 108
  * Difficulty: Easy
+ * Topic: binary search to create a BST
  */
 public class ConvertSortedArrayToBinarySearchTree {
 

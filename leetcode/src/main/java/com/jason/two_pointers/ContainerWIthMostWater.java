@@ -1,10 +1,5 @@
 package com.jason.two_pointers;
 
-import com.jason.tree.binary_tree.heap.MaxHeap;
-
-import java.util.Map;
-import java.util.TreeMap;
-
 /**
  * Topic: two-pointers
  */
