@@ -20,24 +20,6 @@ public class InvertBinaryTree {
         return root;
     }
 
-//    public TreeNode invert(TreeNode p, TreeNode q) {
-//        if (p != null && q != null) {
-//            if (p.val != q.val)
-//                return false;
-//            else {
-//                if (!invert(p.left, q.right))
-//                    return false;
-//                if (!invert(p.right, q.left))
-//                    return false;
-//            }
-//        } else if (p == null && q == null) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//        return true;
-//    }
-
     public class TreeNode {
         int val;
         TreeNode left;

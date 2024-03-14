@@ -8,6 +8,7 @@ import java.util.Queue;
 /**
  * Problem: 637
  * Difficulty: Easy
+ * Topic: BFS
  */
 public class AverageOfLevelsInBinaryTree {
     public List<Double> averageOfLevels(TreeNode root) {
