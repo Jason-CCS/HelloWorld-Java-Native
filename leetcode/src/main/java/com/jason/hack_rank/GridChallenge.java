@@ -8,7 +8,6 @@ import java.util.List;
  * And all the object extending Comparable has ability to do obj.compareTo(anotherObj).
  */
 public class GridChallenge {
-
     public static String gridChallenge(List<String> grid) {
         // Write your code here
         int m = grid.size();
