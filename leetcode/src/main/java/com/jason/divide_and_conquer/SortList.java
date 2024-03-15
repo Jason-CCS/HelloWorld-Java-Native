@@ -13,12 +13,11 @@ import java.util.Comparator;
 public class SortList {
 
     public static ListNode sortList(ListNode head) {
-        if(head==null){
+        if (head == null) {
             return head;
         }
         ListNode node = head;
         ArrayList<ListNode> arrayList = new ArrayList<>();
-
 
         while (node != null) {
             ListNode next = node.next;

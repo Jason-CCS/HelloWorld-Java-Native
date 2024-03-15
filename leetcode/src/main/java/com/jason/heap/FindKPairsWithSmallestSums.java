@@ -2,6 +2,10 @@ package com.jason.heap;
 
 import java.util.*;
 
+/**
+ * Problem: 373
+ * Difficulty: Medium
+ */
 public class FindKPairsWithSmallestSums {
 
     public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
