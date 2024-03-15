@@ -2,6 +2,9 @@ package com.jason.hack_rank;
 
 import java.util.List;
 
+/**
+ * This is a good problem to train the logic thinking.
+ */
 public class NewYearChaos {
     public static void minimumBribes(List<Integer> q) {
         // Write your code here
