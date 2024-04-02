@@ -52,7 +52,7 @@ public class FileProtection {
 
     public static void main(String[] args) {
         System.out.println(getMinimumChanges(
-                List.of(0, 0, 1, 0, 0, 0, 0, 3, 0, 20, 0, 5, 3, 2, 3, 19),
-                List.of(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)));
+                List.of(1, 3, 5, 7, 9),
+                List.of(5, 5, 5, 5, 5)));
     }
 }
