@@ -1,7 +1,5 @@
 package com.jason.hack_rank;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
