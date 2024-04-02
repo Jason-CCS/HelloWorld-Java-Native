@@ -1,6 +1,9 @@
 package com.jason.hack_rank;
 
 
+/**
+ * Pointer has to be stabilized.
+ */
 public class MergeTwoSortedLinkedLists {
 
     static class SinglyLinkedListNode {
