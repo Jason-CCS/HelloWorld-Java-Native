@@ -2,6 +2,9 @@ package com.jason;
 
 import java.util.*;
 
+/**
+ * All the basic data structure in Java.
+ */
 public class DataStructure {
 
     public static void main(String[] args) {

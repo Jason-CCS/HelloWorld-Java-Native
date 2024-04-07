@@ -3,8 +3,10 @@ package com.jason.sort_and_search;
 import java.util.Arrays;
 
 /**
- * Great practice to practice the merge sort.
- * The merge function here basically is the core part "merge" in MergeSort algorithm.
+ * Problem: 88
+ * Difficulty: Easy
+ * Here I use the core of merge sort to solve this problem,
+ * but, to be honest, using two pointers to traverse two arrays is easier.
  */
 public class MergeSortedArray {
 
