@@ -5,7 +5,7 @@ package com.jason.greedy;
  * Difficulty: Medium
  * The problem exercises the use of arrays and dynamic programming.
  */
-public class JumpGame {
+public class JumpGameI {
     /**
      * Version 1: my own solution.
      * The provided code is a Solution to the Jump Game problem using depth-first search (DFS) approach.
