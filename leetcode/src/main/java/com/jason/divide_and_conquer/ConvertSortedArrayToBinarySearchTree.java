@@ -10,7 +10,7 @@ public class ConvertSortedArrayToBinarySearchTree {
 
     /**
      * This is the solution from LeetCode solution.
-     * I don't know how to build a balanced tree from an array.
+     * I don't know how to build a balanced search tree from an array.
      * The very 5 stars concept here: !!!!!!!!!!
      * When you do the binary search for a sorted array, you can at the same time build up a binary search tree.
      * It will take n*log(n) time to create.
