@@ -13,7 +13,7 @@ public class JumpGameII {
      * When i reaches currentMaxDistance, it means it reaches last time the most max distance where we can reach.
      * And once we reach, we will see what is the next max distance that we can go.
      * The next max distance might be updated by any of the former index of the current index, so this means the better
-     * way to go further is from that former index, but not from the current index.j
+     * way to go further is from that former index, but not from the current index.
      * <br>
      * Anyway, using two variables to save the latest greedy values is the way that I have never thought of.
      * Time Complexity: O(n), where n is the length of the input array 'nums'.
