@@ -4,26 +4,22 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 /**
- * Version 1 is my own version:
- * It's like a brute-force solution.
- * Every time start from the index, and iterate through all the strings in the input array,
- * if we found any character is not the same as the str[i+1].chartAt(index),
- * then we know this is the end to look for the common prefix.
- * If not, then we index++. Go for next iteration str[i].chartAt(index+1).
- * Time complexity is O(k*n). k is the prefix of the common string. n is the number of strings in the list.
- *<p></p>
- * Version 2 is from Leetcode solutions:
- * Sort the strs into lexicographic order so that the last one will differ the most from the first str.
- * So only finding the longest common prefix between first and last str is sufficient.
- * <p></p>
- * Version3 is my own version again:
- * Let longestPrefixLen as the variable to store the longest prefix length.
- * I compare the first str with all other strs.
- * Each time when I compare with other str, the common prefix will be shorter and shorter.
- * So the one shorter than the current longestPrefixLen will be saved into longestPrefixLen to update this variable.
- * Time complexity is O(k*n). k is the prefix of the common string. n is the number of strings in the list.
+ * Problem: 14
+ * Difficulty: Easy
  */
 public class LongestCommonPrefix {
+    /**
+     * Version 1 is my own version:
+     * It's like a brute-force solution.
+     * Every time start from the index, and iterate through all the strings in the input array,
+     * if we found any character is not the same as the str[i+1].chartAt(index),
+     * then we know this is the end to look for the common prefix.
+     * If not, then we index++. Go for next iteration str[i].chartAt(index+1).
+     * Time complexity is O(k*n). k is the prefix of the common string. n is the number of strings in the list.
+     *
+     * @param strs
+     * @return
+     */
     public static String longestCommonPrefixVersion1(String[] strs) {
         if (strs[0].isEmpty())
             return "";
@@ -52,6 +48,14 @@ public class LongestCommonPrefix {
         }
     }
 
+    /**
+     * Version 2 is from Leetcode solutions:
+     * Sort the strs into lexicographic order so that the last one will differ the most from the first str.
+     * So only finding the longest common prefix between first and last str is sufficient.
+     *
+     * @param strs
+     * @return
+     */
     public static String longestCommonPrefixVersion2(String[] strs) {
         StringBuilder ans = new StringBuilder();
         Arrays.sort(strs);
@@ -66,6 +70,17 @@ public class LongestCommonPrefix {
         return ans.toString();
     }
 
+    /**
+     * Version3 is my own version again:
+     * Let longestPrefixLen as the variable to store the longest prefix length.
+     * I compare the first str with all other strs.
+     * Each time when I compare with other str, the common prefix will be shorter and shorter.
+     * So the one shorter than the current longestPrefixLen will be saved into longestPrefixLen to update this variable.
+     * Time complexity is O(k*n). k is the prefix of the common string. n is the number of strings in the list.
+     *
+     * @param strs
+     * @return
+     */
     public static String longestCommonPrefixVersion3(String[] strs) {
         int longestPrefixLen = strs[0].length();
         for (int i = 1; i < strs.length; i++) {

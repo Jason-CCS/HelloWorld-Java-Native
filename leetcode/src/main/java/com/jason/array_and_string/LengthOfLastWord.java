@@ -1,10 +1,16 @@
 package com.jason.array_and_string;
 
 /**
- * This one is quite easy. Go from the tail is faster but rather tricky.
- * Use s.trim().split(" ")[length-1].length is more general and easier to understand.
+ * Problem: 58
+ * Difficulty: Easy
  */
 public class LengthOfLastWord {
+
+    /**
+     * This one is quite easy. Go from the tail is faster but rather tricky.
+     * Use s.trim().split(" ")[length-1].length is more general and easier to understand.
+     *
+     */
     public static int lengthOfLastWord(String s) {
         int theLastCharIndex = 0;
         for (int i = s.length() - 1; i >= 0; i--) {

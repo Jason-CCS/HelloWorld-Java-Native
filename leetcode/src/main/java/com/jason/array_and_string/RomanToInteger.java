@@ -3,8 +3,8 @@ package com.jason.array_and_string;
 import java.util.Map;
 
 /**
- * The version 2 is the best solution from LeetCode solutions:
- * It compares whether s[i] < s[i+1]. If it is, then we sum = sum + toInt(s[i+1]) - toInt(s[i])
+ * Problem: 13
+ * Difficulty: Easy
  */
 public class RomanToInteger {
     static Map<Character, Integer> romanMap = Map.ofEntries(
@@ -16,6 +16,14 @@ public class RomanToInteger {
             Map.entry('D', 500),
             Map.entry('M', 1000)
     );
+
+    /**
+     * The version 2 is the best solution from LeetCode solutions:
+     * It compares whether s[i] < s[i+1]. If it is, then we sum = sum + toInt(s[i+1]) - toInt(s[i])
+     *
+     * @param s
+     * @return
+     */
     public static int romanToIntVersion2(String s) {
         int sum = 0;
 

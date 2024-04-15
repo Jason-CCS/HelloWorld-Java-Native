@@ -1,7 +1,8 @@
 package com.jason.array_and_string;
 
 /**
- * Easy
+ * Problem: 28
+ * Difficulty: Easy
  */
 public class FindTheIndexOfTheFirstOccurrenceInAString {
 
