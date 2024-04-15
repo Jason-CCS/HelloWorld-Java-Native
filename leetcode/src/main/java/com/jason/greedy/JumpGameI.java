@@ -3,7 +3,7 @@ package com.jason.greedy;
 /**
  * Problem: 55
  * Difficulty: Medium
- * The problem exercises the use of arrays and dynamic programming.
+ * The problem exercises the use of arrays, dynamic programming, and greedy.
  */
 public class JumpGameI {
     /**

@@ -4,6 +4,16 @@ package com.jason.greedy;
  * Problem: 45
  * Difficulty: Medium
  * The JumpGameII class calculates the minimal number of jumps to reach the end of a given array.
+ * <p>
+ * Greedy algorithms follow a simple problem-solving heuristic which is to make the choice that
+ * looks best at the current moment, with the hope that by choosing the best option now, you’ll get
+ * an overall optimal solution to the problem.
+ * <p>
+ * Characteristics of Greedy Algorithms
+ * <p>
+ * 1. Greedy choice property: A global optimum can be arrived at by selecting a local optimum.
+ * 2. Optimal substructure: A problem exhibits optimal substructure if an optimal solution to
+ * the problem contains an optimal solution to subproblems.
  */
 public class JumpGameII {
 
