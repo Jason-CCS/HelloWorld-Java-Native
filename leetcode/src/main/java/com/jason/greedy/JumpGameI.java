@@ -3,7 +3,7 @@ package com.jason.greedy;
 /**
  * Problem: 55
  * Difficulty: Medium
- * The problem exercises the use of arrays, dynamic programming, and greedy.
+ * This problem calculates whether you can reach the end of given array.
  */
 public class JumpGameI {
     /**

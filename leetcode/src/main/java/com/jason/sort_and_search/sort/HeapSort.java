@@ -1,4 +1,4 @@
-package com.jason.sort_and_search.binary_search.sort;
+package com.jason.sort_and_search.sort;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;

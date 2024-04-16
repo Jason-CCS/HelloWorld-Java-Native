@@ -1,6 +1,8 @@
 package com.jason.sort_and_search;
 
 /**
+ * Problem: 35
+ * Difficulty: Easy
  * In this kind of position finding problem, we have to be very careful of the return position.
  * You might find that the position you figure out does not match the edge case.
  * For example, if you have the input array is [1, 3, 5, 6] and you want to find the insert position for target=7,

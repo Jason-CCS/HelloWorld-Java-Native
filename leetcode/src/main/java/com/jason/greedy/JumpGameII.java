@@ -3,7 +3,7 @@ package com.jason.greedy;
 /**
  * Problem: 45
  * Difficulty: Medium
- * The JumpGameII class calculates the minimal number of jumps to reach the end of a given array.
+ * The JumpGameII calculates the minimal number of jumps to reach the end of a given array.
  * <p>
  * Greedy algorithms follow a simple problem-solving heuristic which is to make the choice that
  * looks best at the current moment, with the hope that by choosing the best option now, you’ll get
