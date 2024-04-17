@@ -28,6 +28,13 @@ public class RandomizedSet {
         }
     }
 
+    /**
+     * Here is the key point.
+     * if the index removed from map is not the last index in the list, we use the real last element in list to
+     * make up the removed vacancy. So here you can see list.set(index, lastVal) and map.put(lastVal, index).
+     * @param val
+     * @return
+     */
     public boolean remove(int val) {
         if (!map.containsKey(val))
             return false;

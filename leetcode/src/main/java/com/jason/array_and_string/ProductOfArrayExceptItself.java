@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class ProductOfArrayExceptItself {
     /**
      * Version 1
-     *
+     * Use prefix sum idea to solve the problem.
      * @param nums
      * @return
      */
