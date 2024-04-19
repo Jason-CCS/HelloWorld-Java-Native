@@ -5,6 +5,7 @@ import java.util.Map;
 /**
  * Problem: 13
  * Difficulty: Easy
+ * RomanToInteger involves converting a Roman numeral string to an equivalent decimal integer, following the standard rules of Roman numeral interpretation.
  */
 public class RomanToInteger {
     static Map<Character, Integer> romanMap = Map.ofEntries(

@@ -3,13 +3,13 @@ package com.jason.array_and_string;
 /**
  * Problem: 58
  * Difficulty: Easy
+ * The purpose of this Leetcode problem is to find the length of the last word in a given string.
  */
 public class LengthOfLastWord {
 
     /**
      * This one is quite easy. Go from the tail is faster but rather tricky.
      * Use s.trim().split(" ")[length-1].length is more general and easier to understand.
-     *
      */
     public static int lengthOfLastWord(String s) {
         int theLastCharIndex = 0;

@@ -3,8 +3,16 @@ package com.jason.two_pointers;
 /**
  * Problem: 151
  * Difficulty: Medium
+ * This problem requires developing an algorithm to reverse the order of words in a given string,
+ * removing any leading or trailing spaces, and ensuring only a single space separates words.
  */
 public class ReverseWordsInAString {
+    /**
+     * Use two pointers approach. Start from the tail to the head of s.
+     * Time complexity: O(n)
+     * @param s
+     * @return
+     */
     public String reverseWords(String s) {
         int head = s.length() - 1, tail = s.length() - 1;
         StringBuilder sb = new StringBuilder();

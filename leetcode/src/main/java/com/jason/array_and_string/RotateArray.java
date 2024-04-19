@@ -7,6 +7,7 @@ import java.util.Map;
 /**
  * Problem: 189
  * Difficulty: Medium
+ * The purpose of this Leetcode problem is to rotate an array to the right by k steps where k is a non-negative integer.
  */
 public class RotateArray {
     /**

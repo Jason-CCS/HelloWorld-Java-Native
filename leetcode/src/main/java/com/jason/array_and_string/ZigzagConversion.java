@@ -3,6 +3,12 @@ package com.jason.array_and_string;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Problem: 6
+ * Difficulty: Medium
+ * This problem requires transforming a given string into a zigzag pattern across a specified number of rows,
+ * and then returning the resulting characters as a new string, read line by line from left to right.
+ */
 public class ZigzagConversion {
     public String convert(String s, int numRows) {
         int index = 0;

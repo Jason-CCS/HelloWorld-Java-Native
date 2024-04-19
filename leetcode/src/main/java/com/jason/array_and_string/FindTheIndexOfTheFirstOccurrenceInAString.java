@@ -3,6 +3,7 @@ package com.jason.array_and_string;
 /**
  * Problem: 28
  * Difficulty: Easy
+ * FindTheIndexOfTheFirstOccurrenceInAString involves finding the index of the first occurrence of a needle string in a haystack string; if the needle does not exist, the function returns -1.
  */
 public class FindTheIndexOfTheFirstOccurrenceInAString {
 

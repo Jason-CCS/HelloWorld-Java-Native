@@ -3,6 +3,7 @@ package com.jason.array_and_string;
 /**
  * Problem: 169
  * Difficulty: Easy
+ * Find the majority element in an array (occurs more than n/2 times)
  */
 public class MajorityElement {
 

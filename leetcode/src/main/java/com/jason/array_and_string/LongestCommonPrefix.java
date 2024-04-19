@@ -6,6 +6,7 @@ import java.util.LinkedList;
 /**
  * Problem: 14
  * Difficulty: Easy
+ * The purpose of the Leetcode problem in the current editor is to find the longest common prefix string amongst an array of strings.
  */
 public class LongestCommonPrefix {
     /**
@@ -52,6 +53,7 @@ public class LongestCommonPrefix {
      * Version 2 is from Leetcode solutions:
      * Sort the strs into lexicographic order so that the last one will differ the most from the first str.
      * So only finding the longest common prefix between first and last str is sufficient.
+     * Time Complexity is n*log(n)
      *
      * @param strs
      * @return
