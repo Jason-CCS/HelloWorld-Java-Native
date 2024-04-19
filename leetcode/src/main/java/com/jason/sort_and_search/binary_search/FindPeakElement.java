@@ -3,6 +3,7 @@ package com.jason.sort_and_search.binary_search;
 /**
  * Problem: 162
  * Difficulty: Medium
+ * Find Peak Element, is to find a peak element in the given array, where a peak element is one that is greater than its neighbours.
  */
 public class FindPeakElement {
 

@@ -1,7 +1,9 @@
 package com.jason.two_pointers;
 
 /**
- * Topic: two-pointers
+ * Problem: 11
+ * Difficulty: Medium
+ * Problem Description: This problem is to find two lines (represented as an array of integers), which, together with the x-axis forms a container, that can contain the most water.
  */
 public class ContainerWIthMostWater {
     /**
