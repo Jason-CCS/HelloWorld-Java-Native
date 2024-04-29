@@ -7,6 +7,15 @@ package com.jason.hashtable;
  * magazine, such that every character in the ransom note exists in the magazine with a sufficient frequency.
  */
 public class RansomNote {
+    /**
+     * Version 1
+     * When the keys are int, and they are continuous integers, we can use object[] array as an HashMap to store the elements.
+     * This way will be faster than real HashMap class.
+     * Time complexity is O(n).
+     * @param ransomNote
+     * @param magazine
+     * @return
+     */
     public boolean canConstruct(String ransomNote, String magazine) {
         if (ransomNote.length()>magazine.length())
             return false;

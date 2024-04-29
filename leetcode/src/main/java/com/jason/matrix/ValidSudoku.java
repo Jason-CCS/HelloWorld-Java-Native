@@ -18,7 +18,6 @@ public class ValidSudoku {
      * My solution use more computation complexity on create the HashSet and the operation on HashSet.
      * So even the time complexity is O(n), it has more overhead than Version 2.
      * Time Complexity: O(n)
-     *
      * @param board
      * @return
      */
