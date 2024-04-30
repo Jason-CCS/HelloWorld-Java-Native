@@ -59,7 +59,7 @@ public class ReverseLinkedListII {
             counter++;
         }
         ListNode newHead = cur;
-        newTail.next = newHead.next;
+        newTail.next = newHead.next; // newHead won't be null because the given constraints have 1<=left<=right<=n
         newHead.next = prev;
         if (prevHead != null) {
             prevHead.next = newHead;
@@ -74,6 +74,6 @@ public class ReverseLinkedListII {
         ListNode tc2 = new ListNode(3, new ListNode(5));
 
 
-        new ReverseLinkedListII().reverseBetween(tc1, 1,2);
+        new ReverseLinkedListII().reverseBetween(tc2, 1,2);
     }
 }
