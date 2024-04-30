@@ -10,6 +10,5 @@ public class Foo {
                 return null;
             }
         };
-
     }
 }
