@@ -2,7 +2,6 @@ package com.jason.tree.binary_tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class TreeTraversal {
