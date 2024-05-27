@@ -1,7 +1,10 @@
 package com.jason.tree.trie;
 
 /**
- * This is the Trie data structure.
+ * Problem: 208
+ * Difficulty: Medium
+ * The current problem is to implement a Trie (Prefix Tree), a tree-like data structure that is used to efficiently store and retrieve keys in a dataset of strings.
+ * This data structure is useful for the applications, such as autocomplete and spellchecker.
  */
 public class Trie {
     private TrieNode root;
@@ -87,5 +90,15 @@ public class Trie {
         public void setChild(char ch, TrieNode node) {
             children[ch - 'a'] = node;
         }
+    }
+
+    public static void main(String[] args) {
+        Trie trie = new Trie();
+        trie.insert("apple");
+        System.out.println(trie.search("apple"));
+        System.out.println(trie.search("app"));
+        System.out.println(trie.startsWith("app"));
+        trie.insert("app");
+        System.out.println(trie.search("app"));
     }
 }
