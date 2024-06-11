@@ -8,34 +8,33 @@ import java.util.*;
  * The problem requires generating all possible permutations of a given array of distinct integers.
  */
 public class Permutations {
+    /**
+     * This solution can be a standard solution for those problem which needs the permutations.
+     * Time complexity is O(n^n).
+     */
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        List<Integer> indexes = new ArrayList<>();
-        helper(0, indexes, res, nums);
+        List<Integer> permutation = new ArrayList<>();
+        helper(0, permutation, res, nums);
         return res;
     }
 
-    private void helper(int level, List<Integer> indexes, List<List<Integer>> res, int[] nums) {
-        if (level == nums.length) {
-            List<Integer> list = new ArrayList<>();
-            for (int i : indexes) {
-                list.add(nums[i]);
-            }
-            res.add(list);
-        } else {
-            for (Integer i = 0; i < nums.length; i++) {
-                if (indexes.contains(i)) continue;
-                indexes.add(i);
-                helper(level + 1, indexes, res, nums);
-                indexes.remove(i);
-            }
+    private void helper(int level, List<Integer> permutation, List<List<Integer>> res, int[] nums) {
+        for (Integer number : nums) {
+            if (permutation.contains(number)) continue;
+            permutation.add(number);
+            if (level == nums.length - 1)
+                res.add(new ArrayList<>(permutation));
+            else
+                helper(level + 1, permutation, res, nums);
+            permutation.remove(number);
         }
     }
 
     public static void main(String[] args) {
         Permutations sol = new Permutations();
-        System.out.println(sol.permute(new int[]{1, 2, 3}));
+        System.out.println(sol.permute(new int[]{3, 4, 5}));
 //        System.out.println(sol.permute(new int[]{0, 1}));
-        System.out.println(sol.permute(new int[]{1}));
+//        System.out.println(sol.permute(new int[]{1}));
     }
 }
