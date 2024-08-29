@@ -43,8 +43,8 @@ public class QueueUsingTwoStacks {
     public static void main(String[] args) {
         QueueUsingTwoStacks queue = new QueueUsingTwoStacks();
         Scanner scanner = new Scanner(System.in);
-        String querys = scanner.nextLine();
-        int times = Integer.parseInt(querys);
+        String queries = scanner.nextLine();
+        int times = Integer.parseInt(queries);
         for (int i = 0; i < times; i++) {
             String query = scanner.nextLine();
             String[] commands = query.split(" ");
@@ -61,5 +61,6 @@ public class QueueUsingTwoStacks {
                 queue.push(Integer.parseInt(commands[1]));
             }
         }
+        scanner.close();
     }
 }
