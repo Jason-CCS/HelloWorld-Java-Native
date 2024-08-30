@@ -1,42 +1,50 @@
 package com.jason.hack_rank;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
  * Queue using Two Stacks
+ * This is a good example to understand the amortized time.
+ * Poll() and peek() needs O(k) times when the popStack is empty.
+ * K is the current number of elements in pushStack.
+ * However, most time is O(1), So O((k+1*(k-2))/k) = O(1).
  */
 public class QueueUsingTwoStacks {
 
-    private Deque<Integer> pushtStack;
+    private Deque<Integer> pushStack;
     private Deque<Integer> popStack;
-    private int front = 0;
 
     public QueueUsingTwoStacks() {
-        this.pushtStack = new LinkedList<>();
-        this.popStack = new LinkedList<>();
+        this.pushStack = new ArrayDeque<>();
+        this.popStack = new ArrayDeque<>();
     }
 
-    private void push(int x) {
-        if (pushtStack.isEmpty())
-            front = x;
-        pushtStack.push(x);
+    private void offer(int x) {
+        pushStack.push(x);
+        System.out.println(pushStack.toString());
     }
 
-    private int pop() {
-        while (!pushtStack.isEmpty()) {
-            popStack.push(pushtStack.pop());
+    private void poll() {
+        if (popStack.isEmpty()) {
+            popAllFromPushStack(popStack);
         }
-        int dequeue = popStack.pop();
-        while (!popStack.isEmpty()) {
-            pushtStack.push(popStack.pop());
-        }
-        return dequeue;
+        Integer dequeue = popStack.pop();
+        System.out.printf("pop out %d%n", dequeue);
     }
 
-    private void print() {
-        System.out.println(this.front);
+    private void popAllFromPushStack(Deque<Integer> popStack) {
+        while (!pushStack.isEmpty()) {
+            popStack.push(pushStack.pop());
+        }
+    }
+
+    private void peek() {
+        if (popStack.isEmpty()) {
+            popAllFromPushStack(popStack);
+        }
+        System.out.println(this.popStack.peek());
     }
 
 
@@ -51,14 +59,14 @@ public class QueueUsingTwoStacks {
             if (commands.length == 1) {
                 switch (Integer.parseInt(commands[0])) {
                     case 2:
-                        queue.pop();
+                        queue.poll();
                         break;
                     case 3:
-                        queue.print();
+                        queue.peek();
                         break;
                 }
             } else { // length == 2
-                queue.push(Integer.parseInt(commands[1]));
+                queue.offer(Integer.parseInt(commands[1]));
             }
         }
         scanner.close();
