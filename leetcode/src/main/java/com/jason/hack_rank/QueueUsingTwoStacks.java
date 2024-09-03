@@ -7,9 +7,9 @@ import java.util.Scanner;
 /**
  * Queue using Two Stacks
  * This is a good example to understand the amortized time.
- * Poll() and peek() needs O(k) times when the popStack is empty.
+ * In here, Poll() and peek() needs O(k) times when the popStack is empty.
  * K is the current number of elements in pushStack.
- * However, most time is O(1), So O((k+1*(k-2))/k) = O(1).
+ * However, most times are O(1), So O((k+1*(k-2))/k) = O(1).
  */
 public class QueueUsingTwoStacks {
 

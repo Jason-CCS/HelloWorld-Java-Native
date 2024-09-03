@@ -25,7 +25,7 @@ public class LRUCache {
 
 
     /**
-     * If put when at capacity, remove the node from Doubly LinkedList and add at the first.
+     * If put at capacity, remove the node from Doubly LinkedList and add at the first.
      *
      * @param key
      */
