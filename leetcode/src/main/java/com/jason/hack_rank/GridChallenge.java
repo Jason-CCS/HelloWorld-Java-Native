@@ -37,6 +37,6 @@ public class GridChallenge {
     }
 
     public static void main(String[] args) {
-        System.out.println(gridChallenge(List.of("kc", "iu")));
+        System.out.println(gridChallenge(Arrays.asList("kc", "iu")));
     }
 }

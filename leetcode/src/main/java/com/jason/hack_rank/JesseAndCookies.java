@@ -73,7 +73,8 @@ public class JesseAndCookies {
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(cookies(10, List.of(52, 96, 13, 37)));
+
+        System.out.println(cookies(10, Arrays.asList(52, 96, 13, 37)));
 //        PriorityQueue<Integer> pq = new PriorityQueue<>(List.of(2, 7, 3, 6, 4, 6));
 //        System.out.println(pq.poll());
 //        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));

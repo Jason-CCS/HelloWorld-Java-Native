@@ -94,11 +94,11 @@ public class WordBreak {
 //        System.out.println(wb.wordBreak("applepenapple", new ArrayList<>(List.of("apple", "pen", "apple"))));
 //        System.out.println(wb.wordBreak("catsandog", new ArrayList<>(List.of("cats", "dog", "sand", "and", "cat"))));
 //        System.out.println(wb.wordBreak("aaaaaaa", new ArrayList<>(List.of("aaaa", "aaa"))));
-        System.out.println(wb.wordBreak("aaaaaaab", new ArrayList<>(List.of("a", "aa", "aaa", "aaaa"))));
-        System.out.println(wb.wordBreak("catsandogcat", new ArrayList<>(List.of("cats", "dog", "sand", "and", "cat", "an"))));
-        System.out.println(wb.wordBreak("catskicatcats", new ArrayList<>(List.of("cats", "cat", "dog", "ski"))));
+        System.out.println(wb.wordBreak("aaaaaaab", Arrays.asList("a", "aa", "aaa", "aaaa")));
+        System.out.println(wb.wordBreak("catsandogcat", Arrays.asList("cats", "dog", "sand", "and", "cat", "an")));
+        System.out.println(wb.wordBreak("catskicatcats", Arrays.asList("cats", "cat", "dog", "ski")));
         System.out.println(wb.wordBreak("fohhemkkaecojceoaejkkoedkofhmohkcjmkggcmnami",
-                new ArrayList<>(List.of("kfomka", "hecagbngambii", "anobmnikj", "c", "nnkmfelneemfgcl", "ah",
+                Arrays.asList("kfomka", "hecagbngambii", "anobmnikj", "c", "nnkmfelneemfgcl", "ah",
                         "bgomgohl", "lcbjbg", "ebjfoiddndih", "hjknoamjbfhckb", "eioldlijmmla", "nbekmcnakif",
                         "fgahmihodolmhbi", "gnjfe", "hk", "b", "jbfgm", "ecojceoaejkkoed", "cemodhmbcmgl", "j",
                         "gdcnjj", "kolaijoicbc", "liibjjcini", "lmbenj", "eklingemgdjncaa", "m", "hkh", "fblb",
@@ -142,6 +142,6 @@ public class WordBreak {
                         "cklna", "lihaiollfnem", "ionlnlhjckf", "cfdlijnmgjoebl", "dloehimen", "acggkacahfhkdne", "iecd",
                         "gn", "odgbnalk", "ahfhcd", "dghlag", "bchfe", "dldblmnbifnmlo", "cffhbijal", "dbddifnojfibha",
                         "mhh", "cjjol", "fed", "bhcnf", "ciiibbedklnnk", "ikniooicmm", "ejf", "ammeennkcdgbjco", "jmhmd",
-                        "cek", "bjbhcmda", "kfjmhbf", "chjmmnea", "ifccifn", "naedmco", "iohchafbega", "kjejfhbco", "anlhhhhg"))));
+                        "cek", "bjbhcmda", "kfjmhbf", "chjmmnea", "ifccifn", "naedmco", "iohchafbega", "kjejfhbco", "anlhhhhg")));
     }
 }

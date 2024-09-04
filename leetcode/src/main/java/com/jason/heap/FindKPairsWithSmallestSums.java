@@ -31,7 +31,7 @@ public class FindKPairsWithSmallestSums {
         int[] twoNumbers;
         while (!maxHeap.isEmpty()) {
             twoNumbers = maxHeap.poll();
-            result.add(List.of(twoNumbers[0], twoNumbers[1]));
+            result.add(Arrays.asList(twoNumbers[0], twoNumbers[1]));
         }
 
         return result;

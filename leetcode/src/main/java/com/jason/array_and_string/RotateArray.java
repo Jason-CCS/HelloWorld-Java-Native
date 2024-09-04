@@ -1,5 +1,6 @@
 package com.jason.array_and_string;
 
+import java.util.AbstractMap;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Map;
@@ -27,7 +28,7 @@ public class RotateArray {
         int source, target;
         ArrayDeque<Map.Entry<Integer, Integer>> deque = new ArrayDeque<>();
         for (int i = 0; i < k; i++) {
-            deque.add(Map.entry(i, nums[i])); // please remember how to init an entry.
+            deque.add(new AbstractMap.SimpleEntry<>(i, nums[i])); // please remember how to init an entry.
         }
 
         while (!deque.isEmpty()) {
@@ -38,7 +39,7 @@ public class RotateArray {
                 nums[target] = e.getValue();
             } else {
                 target = source + k;
-                deque.add(Map.entry(target, nums[target]));
+                deque.add(new AbstractMap.SimpleEntry<>(target, nums[target]));
                 nums[target] = e.getValue();
             }
         }

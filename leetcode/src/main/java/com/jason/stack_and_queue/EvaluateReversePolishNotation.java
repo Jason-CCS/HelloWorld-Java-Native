@@ -1,5 +1,6 @@
 package com.jason.stack_and_queue;
 
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
  */
 public class EvaluateReversePolishNotation {
     public int evalRPN(String[] tokens) {
-        List<String> operators = List.of("+", "-", "*", "/");
+        List<String> operators = Arrays.asList("+", "-", "*", "/");
         Deque<Integer> stack = new LinkedList<>();
         for (String token : tokens) {
             if (operators.contains(token)) {

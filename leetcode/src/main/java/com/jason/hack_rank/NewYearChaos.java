@@ -1,5 +1,6 @@
 package com.jason.hack_rank;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -29,6 +30,6 @@ public class NewYearChaos {
     }
 
     public static void main(String[] args) {
-        minimumBribes(List.of(1, 2, 5, 3, 7, 8, 6, 4));
+        minimumBribes(Arrays.asList(1, 2, 5, 3, 7, 8, 6, 4));
     }
 }
