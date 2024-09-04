@@ -5,6 +5,10 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.stream.IntStream;
 
+/**
+ * The purpose of the code in the current editor is to develop a simple text editor with capabilities to append strings,
+ * delete characters, print a specific character, and perform undo operations, with all actions being driven from the console input.
+ */
 public class SimpleTextEditor {
     private static Deque<Object> undoStack = new ArrayDeque<>();
     private static String str = "";
@@ -22,7 +26,7 @@ public class SimpleTextEditor {
     }
 
     private static void print(int k) {
-        if (k < 1) throw new RuntimeException("not allow k less than 1");
+        if (k < 1) throw new RuntimeException("not allow k is less than 1");
         System.out.println(str.charAt(k - 1));
     }
 
