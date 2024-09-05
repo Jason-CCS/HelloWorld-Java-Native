@@ -69,19 +69,14 @@ public class DataStructure {
         /**
          * min or max heap
          */
-        PriorityQueue heap = new PriorityQueue(new Comparator<Object>() {
+        PriorityQueue<Integer> heap = new PriorityQueue(new Comparator<Integer>() {
             @Override
-            public int compare(Object o1, Object o2) {
-//                if (o1 < o2)
-//                    return negative int;
-//                else if (o1 == o2)
-//                    return 0;
-//                else // o1 > o2
-//                    return positive int;
-                return 0;
+            public int compare(Integer o1, Integer o2) {
+                return o1 - o2; // This is default setting. It is min heap.
+                // return o2 - o1 // This is max heap.
             }
         });
-        heap.offer(new Object());
+        heap.offer(1);
         obj = heap.poll();
 
         /**
