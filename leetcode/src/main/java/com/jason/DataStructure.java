@@ -91,10 +91,18 @@ public class DataStructure {
         TreeSet<Elem> treeSet = new TreeSet<>(new Comparator<Elem>() {
             @Override
             public int compare(Elem o1, Elem o2) {
-                int freqComparison = Integer.compare(o2.freq, o1.freq);
-                return freqComparison != 0 ? freqComparison : Integer.compare(o1.num, o2.num); // Descending
+                int numComparison = Integer.compare(o1.num, o2.num); // descending
+                return numComparison != 0 ? numComparison : Integer.compare(o1.freq, o2.freq); // 先以num排序為主，再以freq排序為次
             }
         });
+
+        System.out.println(treeSet.add(new Elem(1, 30)));
+        System.out.println(treeSet.add(new Elem(2, 30)));
+        System.out.println(treeSet.add(new Elem(1, 31)));
+        System.out.println(treeSet.add(new Elem(1, 30)));
+        for (Elem elem : treeSet) {
+            System.out.println(elem);
+        }
 
         /**
          * min or max heap, min heap is the default behavior.
@@ -137,6 +145,11 @@ public class DataStructure {
         public Elem(int num, int freq) {
             this.num = num;
             this.freq = freq;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("num: %d, freq: %d", num, freq);
         }
     }
 }

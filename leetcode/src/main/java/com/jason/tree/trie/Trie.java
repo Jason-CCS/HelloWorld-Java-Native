@@ -95,10 +95,21 @@ public class Trie {
     public static void main(String[] args) {
         Trie trie = new Trie();
         trie.insert("apple");
+        trie.insert("applepen");
+        trie.insert("banana");
+        trie.insert("base");
+        trie.insert("cat");
+        trie.insert("dog");
+        trie.insert("egg");
+        trie.insert("firefox");
+        trie.insert("gorgeous");
         System.out.println(trie.search("apple"));
-        System.out.println(trie.search("app"));
-        System.out.println(trie.startsWith("app"));
-        trie.insert("app");
-        System.out.println(trie.search("app"));
+        System.out.println(trie.startsWith("gor"));
+        System.out.println(trie.startsWith("fire"));
+        System.out.println(trie.startsWith("baseball"));
+//        System.out.println(trie.search("app"));
+//        System.out.println(trie.startsWith("app"));
+//        trie.insert("app");
+//        System.out.println(trie.search("app"));
     }
 }

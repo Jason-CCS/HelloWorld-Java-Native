@@ -1,6 +1,8 @@
 package com.jason.dp;
 
 /**
+ * Problem: 122
+ * Difficulty: Medium
  * Star Five.
  * This solution is from the discussion with the colleagues.
  * This is really the good solution if you encounter the same scenario.

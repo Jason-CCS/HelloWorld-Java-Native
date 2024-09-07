@@ -9,6 +9,14 @@ import java.util.List;
  * Problem Description: The purpose of this problem is to return all elements of a given 2D matrix in a spiral order.
  */
 public class SpiralMatrix {
+    /**
+     * This approach definitely is from internet.
+     * Key point:
+     * 使用top, left, bottom, right來track下一個起始點要從哪邊開始，也就是先matrix[0, 0], 下一個起始點[top++, right],
+     * 下一個起始點[bottom, right--], 下一個起始點[bottom--, left++]
+     * @param matrix
+     * @return
+     */
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> resultList = new ArrayList<>();
         if (matrix == null || matrix.length == 0) {

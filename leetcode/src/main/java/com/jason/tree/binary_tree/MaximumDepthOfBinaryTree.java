@@ -1,7 +1,8 @@
 package com.jason.tree.binary_tree;
 
 /**
- * To practice Binary Tree and DFS.
+ * Problem: 226
+ * Difficulty: Easy
  */
 public class MaximumDepthOfBinaryTree {
     private int maxLevel = 0;
@@ -19,10 +20,8 @@ public class MaximumDepthOfBinaryTree {
         if (currentLevel > maxLevel) {
             maxLevel = currentLevel;
         }
-        if (node.left != null)
-            dfs(node.left, currentLevel);
-        if (node.right != null)
-            dfs(node.right, currentLevel);
+        dfs(node.left, currentLevel);
+        dfs(node.right, currentLevel);
     }
 
     public static class TreeNode {

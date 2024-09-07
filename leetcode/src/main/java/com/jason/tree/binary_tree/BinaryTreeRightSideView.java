@@ -44,6 +44,9 @@ public class BinaryTreeRightSideView {
         return viewedList;
     }
 
+    /**
+     * This is a creative approach. I extend the class that the exam gives.
+     */
     public static class LevelTreeNode extends TreeNode {
         int level;
 

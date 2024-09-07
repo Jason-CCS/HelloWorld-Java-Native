@@ -16,7 +16,7 @@ public class MergeIntervals {
 
         List<int[]> list = new ArrayList<>();
         int idx = 0;
-        while (idx < intervals.length) { // O(n)
+        while (idx < intervals.length) { // O(n), and it is a two pointer approach. One is idx, and the other is next.
             int start = intervals[idx][0];
             int end = intervals[idx][1];
             int next = idx + 1;

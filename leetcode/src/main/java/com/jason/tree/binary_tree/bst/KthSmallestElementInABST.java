@@ -16,14 +16,14 @@ public class KthSmallestElementInABST {
      * @return
      */
     public int kthSmallest(TreeNode root, int k) {
-        inOrderDFS(root, k);
+        inOrder(root, k);
         return kElement;
     }
 
-    public int inOrderDFS(TreeNode node, int k) {
+    public int inOrder(TreeNode node, int k) {
         if (node != null) {
             if (k > 0)
-                k = inOrderDFS(node.left, k);
+                k = inOrder(node.left, k);
             // visit part
             if (k > 0)
                 k = k - 1;
@@ -33,7 +33,7 @@ public class KthSmallestElementInABST {
             }
             // end visit
             if (k > 0)
-                k = inOrderDFS(node.right, k);
+                k = inOrder(node.right, k);
         }
         return k;
     }

@@ -19,6 +19,13 @@ public class Permutations {
         return res;
     }
 
+    /**
+     * Guess this is not the best solution, since we can use backtracking to avoid the re-visit the same numer in the for loop.
+     * @param level
+     * @param permutation
+     * @param res
+     * @param nums
+     */
     private void helper(int level, List<Integer> permutation, List<List<Integer>> res, int[] nums) {
         for (Integer number : nums) {
             if (permutation.contains(number)) continue;
