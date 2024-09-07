@@ -51,8 +51,10 @@ public class FileProtection {
     }
 
     public static void main(String[] args) {
-        System.out.println(getMinimumChanges(
-                Arrays.asList(1, 3, 5, 7, 9),
-                Arrays.asList(5, 5, 5, 5, 5)));
+//        System.out.println(getMinimumChanges(
+//                Arrays.asList(1, 3, 5, 7, 9),
+//                Arrays.asList(5, 5, 5, 5, 5)));
+        System.out.println(getMinimumChanges(Arrays.asList(15, 10, 2, 3, 4, 5, 6),
+                Arrays.asList(5, 5, 3, 4, 5, 5, 5)));
     }
 }

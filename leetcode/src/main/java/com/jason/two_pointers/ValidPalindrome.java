@@ -1,5 +1,9 @@
 package com.jason.two_pointers;
 
+/**
+ * Problem: 125
+ * Difficulty: Easy
+ */
 public class ValidPalindrome {
     public boolean isPalindrome(String s) {
         String newString = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");

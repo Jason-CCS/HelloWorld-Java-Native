@@ -1,5 +1,7 @@
 package com.jason;
 
+import com.jason.array_and_string.TopKFrequentElements;
+
 import java.util.*;
 
 /**
@@ -7,7 +9,24 @@ import java.util.*;
  */
 public class DataStructure {
 
+    static class StaticInnerClass {
+        private int a;
+
+        public StaticInnerClass() {
+        }
+    }
+
+    class InnerClass {
+        private int b;
+
+        public InnerClass() {
+        }
+    }
+
     public static void main(String[] args) {
+        StaticInnerClass staticInnerClass = new StaticInnerClass();
+        InnerClass a = new DataStructure().new InnerClass(); // InnerClass is a class you can access only when you instantiate a DataStructure.
+
         /**
          * If you want to random access, please use Array structure.
          */
@@ -49,7 +68,7 @@ public class DataStructure {
         queue.poll();
 
         /**
-         * Tree, a red-black tree. For binary search with O(log(n)) time.
+         * Tree, a red-black tree. It's a balanced binary tree. Great for search, insert, remove, but not O(1) get time.
          */
         TreeMap treeMap = new TreeMap<>(new Comparator<Object>() {
             @Override
@@ -67,7 +86,18 @@ public class DataStructure {
         treeMap.remove(new Object());
 
         /**
-         * min or max heap
+         * Implement red-black tree also. If you need an ordered and deduplicated set, then you can use this one.
+         */
+        TreeSet<Elem> treeSet = new TreeSet<>(new Comparator<Elem>() {
+            @Override
+            public int compare(Elem o1, Elem o2) {
+                int freqComparison = Integer.compare(o2.freq, o1.freq);
+                return freqComparison != 0 ? freqComparison : Integer.compare(o1.num, o2.num); // Descending
+            }
+        });
+
+        /**
+         * min or max heap, min heap is the default behavior.
          */
         PriorityQueue<Integer> heap = new PriorityQueue(new Comparator<Integer>() {
             @Override
@@ -95,5 +125,18 @@ public class DataStructure {
 
     static class Graph {
         public Node[] nodes;
+    }
+
+    /**
+     * Customized KV Elem.
+     */
+    static class Elem {
+        int num;
+        int freq;
+
+        public Elem(int num, int freq) {
+            this.num = num;
+            this.freq = freq;
+        }
     }
 }

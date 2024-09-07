@@ -7,22 +7,43 @@ import java.util.ArrayList;
  * Difficulty: Easy
  * This problem is an Easy problem, but I spend a lot of time to think of the solution.
  * However, I didn't think of that I can change its original value to make it visited.
- *
+ * <p>
  * Another way is use the way to write Tortoise and Hare game.
  * Hare will anyway chase up to the Tortoise, and that means it is cycle linked list.
  */
 public class LinkedListCycle {
     public static boolean hasCycle(ListNode head) {
         if (head == null) return false;
-        ListNode current = head;
-        head.val = 100001;
-        while (current.next != null) {
-            if (current.next.val == 100001) {
+        ListNode curr = head;
+        while (curr != null) {
+            // visit
+            if (curr.val == 100001) {
                 return true;
             } else {
-                current = current.next;
-                current.val = 100001;
+                curr.val = 100001;
+                curr = curr.next;
             }
+        }
+
+        return false;
+    }
+
+    /**
+     * 龜兔賽跑 approach
+     *
+     * @param head
+     * @return
+     */
+    public static boolean hasCycle2(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow==fast)
+                return true;
         }
 
         return false;

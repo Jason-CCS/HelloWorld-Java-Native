@@ -44,6 +44,28 @@ public class RemoveNthNodeFromEndOfList {
         return nodeList.get(0);
     }
 
+    public ListNode removeNthFromEnd2(ListNode head, int n) {
+        if (head == null) return head;
+        ArrayList<ListNode> nodeList = new ArrayList<>();
+        ListNode curr = head;
+        while (curr != null) {
+            nodeList.add(curr);
+            curr = curr.next;
+        }
+
+        int prevIdx = nodeList.size() - n - 1;
+        int nextIdx = nodeList.size() - n + 1;
+        ListNode prev = (prevIdx < 0) ? null : nodeList.get(prevIdx);
+        ListNode next = (nextIdx > nodeList.size() - 1) ? null : nodeList.get(nextIdx);
+        if (prev == null) {
+            head = next;
+        } else {
+            prev.next = next;
+        }
+
+        return head;
+    }
+
     public static class ListNode {
         int val;
         ListNode next;

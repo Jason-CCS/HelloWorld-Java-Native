@@ -27,6 +27,8 @@ public class TwoSumII {
 
     /**
      * Time Complexity: O(n)
+     * This approach makes use of the sorted array is in increasing order.
+     * So we know which direction we can keep looking for.
      * @param numbers
      * @param target
      * @return
@@ -55,7 +57,7 @@ public class TwoSumII {
                 if (nums[m] == target) {
                     return m;
                 } else {
-                    r = m;
+                    r = m; // r等於m的原因是，m已經比過了，而(l+r)/2永遠不會等於r，也就是m不會在下一輪又被比一次。
                 }
             }
         }

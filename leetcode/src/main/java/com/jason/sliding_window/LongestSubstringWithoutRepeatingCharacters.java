@@ -9,12 +9,12 @@ import java.util.HashMap;
  */
 public class LongestSubstringWithoutRepeatingCharacters {
     public int lengthOfLongestSubstring(String s) {
-        if (s.length() == 0) return 0;
+        if (s.isEmpty()) return 0;
         HashMap<Character, Integer> map = new HashMap<>();
         int maxLength = 0;
         for (int end = 0, start = 0; end < s.length(); end++) {
             if (map.containsKey(s.charAt(end)))
-                start = Math.max(start, map.get(s.charAt(end)) + 1);
+                start = Math.max(start, map.get(s.charAt(end)) + 1); // 關鍵是這邊，當map.get(s.charAt(end))取出來的值比start還小，則繼續維持start的原始位置。
             map.put(s.charAt(end), end);
             maxLength = Math.max(maxLength, end - start + 1);
         }

@@ -1,12 +1,16 @@
 package com.jason.linkedlist;
 
+/**
+ * Problem: 21
+ * Difficulty: Easy
+ */
 public class MergeTwoSortedLists {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         if (list1 == null && list2 == null) {
             return null;
         } else if (list2 == null) {
             return list1;
-        } else if (list1 == null){
+        } else if (list1 == null) {
             return list2;
         } else {
             ListNode resultNode = null;
@@ -36,6 +40,46 @@ public class MergeTwoSortedLists {
         }
     }
 
+    public ListNode mergeTwoLists2(ListNode list1, ListNode list2) {
+        ListNode head = null;
+        ListNode curr = null;
+        ListNode next = null;
+        if (list1 == null && list2 == null) {
+            return null;
+        } else if (list2 == null) {
+            return list1;
+        } else if (list1 == null) {
+            return list2;
+        } else {
+            while (list1 != null || list2 != null) {
+                if (list1 != null && list2 != null) {
+                    if (list1.val <= list2.val) {
+                        next = list1;
+                        list1 = list1.next;
+                    } else {
+                        next = list2;
+                        list2 = list2.next;
+                    }
+                } else if (list1 != null) {
+                    next = list1;
+                    list1 = list1.next;
+                } else {
+                    next = list2;
+                    list2 = list2.next;
+                }
+                if (curr == null) {
+                    curr = next;
+                    head = curr;
+                } else {
+                    curr.next = next;
+                    curr = next;
+                }
+            }
+        }
+
+        return head;
+    }
+
     public static class ListNode {
         int val;
         ListNode next;
@@ -56,7 +100,7 @@ public class MergeTwoSortedLists {
     public static void main(String[] args) {
         ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
         ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
-        ListNode resultNode = new MergeTwoSortedLists().mergeTwoLists(list1, list2);
+        ListNode resultNode = new MergeTwoSortedLists().mergeTwoLists2(list1, list2);
 
         ListNode list3 = null;
         ListNode list4 = null;

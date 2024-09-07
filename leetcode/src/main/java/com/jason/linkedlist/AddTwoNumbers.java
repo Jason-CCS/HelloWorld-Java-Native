@@ -1,6 +1,8 @@
 package com.jason.linkedlist;
 
 /**
+ * Problem: 2
+ * Difficulty: Medium
  * recursive的寫法簡潔，但是可讀性比較差。
  * 程式的寫法如果可以就是盡量有需要才跑下一行，那麼可以少掉很多執行的時間。
  */

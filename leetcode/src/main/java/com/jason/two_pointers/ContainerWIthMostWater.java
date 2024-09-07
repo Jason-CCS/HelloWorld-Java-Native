@@ -35,7 +35,7 @@ public class ContainerWIthMostWater {
      * This is the only way we can possibly find larger area.
      * Thus, for the function min(h(l), h(r)) we should keep higher pointer on hold and move the lower pointer to
      * search for even higher pointer. <b>That's why we should give up the lower pointer.</b>
-     * So that's it. This problem we should try to think the equation deeply, then it is possible to find the solutionas below.
+     * So that's it. This problem we should try to think the equation deeply, then it is possible to find the solution below.
      * Time complexity: O(n)
      *
      * @param height
