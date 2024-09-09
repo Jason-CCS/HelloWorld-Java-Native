@@ -1,10 +1,23 @@
 package com.jason;
 
+import com.jason.interval.MergeIntervals;
 import org.junit.Test;
 
 import java.util.*;
 
 public class CheatSheet {
+    /**
+     * 雜項
+     */
+    @Test
+    public void test() {
+        // 字串取代成只有大小寫字母與數字的字串。
+        String str = "AJOI#02384-20i:KY:BKK_)*%)@VN>DFJ>".toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
+        System.out.println(str);
+
+        // deep toString() function for a nested array.
+        System.out.println(Arrays.deepToString(new MergeIntervals().merge(new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}})));
+    }
 
     /**
      * min or max heap, min heap is default.
@@ -101,6 +114,63 @@ public class CheatSheet {
         System.out.println("Thinking it is four?");
         System.out.println("But it is 3.");
         System.out.printf("map size is %d%n", map.size());
+    }
+
+    /**
+     * Two pointers.
+     */
+    @Test
+    public void test6() {
+        int[] nums = {1, 2, 3, 3, 5, 6, 7, 8, 8, 9};
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            // we don't want the nums[left] equal to nums[left-1], the previous number.
+            System.out.println(nums[left] + " " + nums[right]);
+            left++;
+            right--;
+            while (nums[left] == nums[left - 1]) { // 如果我們希望某些條件left and right move多一些。
+                left++;
+            }
+            while (nums[right] == nums[right + 1]) {
+                right--;
+            }
+        }
+    }
+
+    /**
+     * BFS
+     */
+    @Test
+    public void test7() {
+        // BFS
+        Queue<DataStructure.Node> queue = new LinkedList<>();
+
+    }
+
+    /**
+     * Binary Search Pattern
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int binarySearch(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length; // This is really key point. right is nums.length, rather than nums.length-1.
+
+        while (left < right) {
+            int m = (left + right) / 2;
+            if (nums[m] == target) {
+                return m;
+            } else {
+                if (target < nums[m])
+                    right = m;
+                else
+                    left = m + 1;
+            }
+        }
+
+        return -1;
     }
 
     /**
