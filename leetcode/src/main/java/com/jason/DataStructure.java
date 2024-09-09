@@ -1,6 +1,6 @@
 package com.jason;
 
-import com.jason.array_and_string.TopKFrequentElements;
+import com.jason.hack_rank.ShortestReach;
 
 import java.util.*;
 
@@ -8,26 +8,9 @@ import java.util.*;
  * All the basic data structure in Java.
  */
 public class DataStructure {
-
-    static class StaticInnerClass {
-        private int a;
-
-        public StaticInnerClass() {
-        }
-    }
-
-    class InnerClass {
-        private int b;
-
-        public InnerClass() {
-        }
-    }
-
     public static void main(String[] args) {
-        StaticInnerClass staticInnerClass = new StaticInnerClass();
-        InnerClass a = new DataStructure().new InnerClass(); // InnerClass is a class you can access only when you instantiate a DataStructure.
-
         /**
+         * Array
          * If you want to random access, please use Array structure.
          */
         ArrayList arrayList = new ArrayList<>();
@@ -35,6 +18,7 @@ public class DataStructure {
         arrayList.remove(new Object());
 
         /**
+         * Stack and Deque(Queue)
          * If you want to have a O(1) operation from both head and tail, and low memory overhead Stack or Deque, please use ArrayDeque.
          */
         Deque stack = new ArrayDeque();
@@ -49,6 +33,7 @@ public class DataStructure {
         deque.pollLast();
 
         /**
+         * Doubly linkedList, Queue
          * If you want to have a one-way queue or doubly linked list. ArrayDeque and LinkedList are all good for O(1) poll.
          * ArrayDeque has low memory overhead, but need time to resize and copy elements when beyond capacity.
          * LinkedList has higher memory overhead, but no capacity issue.
@@ -68,88 +53,121 @@ public class DataStructure {
         queue.poll();
 
         /**
-         * Tree, a red-black tree. It's a balanced binary tree. Great for search, insert, remove, but not O(1) get time.
-         */
-        TreeMap treeMap = new TreeMap<>(new Comparator<Object>() {
-            @Override
-            public int compare(Object o1, Object o2) {
-//                if (o1 < o2)
-//                    return negative int;
-//                else if (o1 == o2)
-//                    return 0;
-//                else // o1 > o2
-//                    return positive int;
-                return 0;
-            }
-        });
-        treeMap.put(new Object(), new Object());
-        treeMap.remove(new Object());
-
-        /**
-         * Implement red-black tree also. If you need an ordered and deduplicated set, then you can use this one.
-         */
-        TreeSet<Elem> treeSet = new TreeSet<>(new Comparator<Elem>() {
-            @Override
-            public int compare(Elem o1, Elem o2) {
-                int numComparison = Integer.compare(o1.num, o2.num); // descending
-                return numComparison != 0 ? numComparison : Integer.compare(o1.freq, o2.freq); // 先以num排序為主，再以freq排序為次
-            }
-        });
-
-        System.out.println(treeSet.add(new Elem(1, 30)));
-        System.out.println(treeSet.add(new Elem(2, 30)));
-        System.out.println(treeSet.add(new Elem(1, 31)));
-        System.out.println(treeSet.add(new Elem(1, 30)));
-        for (Elem elem : treeSet) {
-            System.out.println(elem);
-        }
-
-        /**
-         * min or max heap, min heap is the default behavior.
-         */
-        PriorityQueue<Integer> heap = new PriorityQueue(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1 - o2; // This is default setting. It is min heap.
-                // return o2 - o1 // This is max heap.
-            }
-        });
-        heap.offer(1);
-        obj = heap.poll();
-
-        /**
          * Matrix
          */
         int[][] matrix = new int[5][5];
+
+        StaticInnerClass staticInnerClass = new StaticInnerClass();
+        InnerClass a = new DataStructure().new InnerClass(); // InnerClass is a class you can access only when you instantiate a DataStructure.
     }
 
     /**
      * Graph
      */
     static class Node {
-        public String name;
-        public Node[] children;
+        public final int key;
+        public List<Node> neighbors;
+
+        public Node(int key) {
+            this.key = key;
+            neighbors = new LinkedList<>();
+        }
+
+        public void addChild(Node child) {
+            neighbors.add(child);
+        }
+
+        public List<Node> getNeighbors() {
+            return neighbors;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("key=%d", key);
+        }
     }
 
     static class Graph {
-        public Node[] nodes;
+        public Node root;
+        public HashMap<Integer, Node> nodes;
+
+        public Graph() {
+            this.nodes = new HashMap<>();
+        }
+
+        public Graph(Node root) {
+            this.root = root;
+            this.nodes = new HashMap<>();
+            this.nodes.put(root.key, root);
+        }
+
+        public Graph(int rootKey) {
+            this.root = new Node(rootKey);
+            this.nodes = new HashMap<>();
+            this.nodes.put(root.key, root);
+        }
+
+        public void addRoot(int rootKey) {
+            if (root == null) {
+                this.root = new Node(rootKey);
+                this.nodes.put(rootKey, root);
+            }
+        }
+
+        public void addEdge(int fromKey, int toKey) {
+            Node fromNode = nodes.get(fromKey);
+            Node toNode = nodes.get(toKey);
+            if (fromNode == null) {
+                fromNode = new Node(fromKey);
+            }
+            if (toNode == null) {
+                toNode = new Node(toKey);
+            }
+            fromNode.addChild(toNode);
+            toNode.addChild(fromNode);
+            this.nodes.put(fromKey, fromNode);
+            this.nodes.put(toKey, toNode);
+        }
+
+        public Node getNode(int key) {
+            return nodes.get(key);
+        }
+
+        public void addNode(int key) {
+            if (!nodes.containsKey(key))
+                this.nodes.put(key, new Node(key));
+        }
     }
 
     /**
      * Customized KV Elem.
      */
-    static class Elem {
-        int num;
-        int freq;
+    static class KVElem {
+        String key;
+        String value;
 
-        public Elem(int num, int freq) {
-            this.num = num;
-            this.freq = freq;
+        public KVElem(String key, String value) {
+            this.key = key;
+            this.value = value;
         }
 
         @Override
         public String toString() {
-            return String.format("num: %d, freq: %d", num, freq);
+            return String.format("num: %s, freq: %s", key, value);
+        }
+    }
+
+    static class StaticInnerClass {
+        private int a;
+
+        public StaticInnerClass() {
+        }
+    }
+
+    class InnerClass {
+        private int b;
+
+        public InnerClass() {
         }
     }
 }

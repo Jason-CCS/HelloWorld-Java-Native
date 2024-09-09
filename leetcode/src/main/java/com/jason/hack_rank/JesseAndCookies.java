@@ -1,12 +1,10 @@
 package com.jason.hack_rank;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.*;
-import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
 
 public class JesseAndCookies {
     public static int times = 0;
