@@ -55,8 +55,30 @@ public class SubarrayDivision1 {
         }
     }
 
+    /**
+     * Sliding Window approach.
+     * O(s.size()*m)
+     * @param s
+     * @param d
+     * @param m
+     * @return
+     */
+    public static int correctSolution(List<Integer> s, int d, int m) {
+        // Write your code here
+        int ways = 0;
+        int sum;
+        for (int i = 0; i <= s.size() - m; i++) {
+            sum = 0;
+            for (int j = i; j < i + m; j++)
+                sum += s.get(j);
+            if (sum == d)
+                ways++;
+        }
+        return ways;
+    }
+
     public static void main(String[] args) {
-        System.out.println(birthday(Arrays.asList(2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1), 18, 7));
+        System.out.println(correctSolution(Arrays.asList(2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1), 18, 7));
     }
 
 }

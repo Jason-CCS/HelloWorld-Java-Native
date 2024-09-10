@@ -119,7 +119,7 @@ public class CheatSheet {
     }
 
     /**
-     * Two pointers.
+     * Two pointers example.
      */
     @Test
     public void test6() {
@@ -139,6 +139,9 @@ public class CheatSheet {
         }
     }
 
+    /**
+     * Convert AM/PM to 24 format.
+     */
     @Test
     public void test7() {
         // Write your code here
@@ -191,14 +194,19 @@ public class CheatSheet {
      * bits operation.
      * Flip the bits.
      * Parse integer and long to binary string, and convert it back.
+     * We can use Integer.parseInteger("string", 2), Long.parseLong("string", 2) to convert string to Integer or Long.
      */
     @Test
     public void test9() {
-        System.out.println(flippingBits(9));
+        long decimal = 9L;
+        String binaryString = String.format("%32s", Long.toBinaryString(decimal)).replace(' ', '0');
+        binaryString = binaryString.replace('0', '2').replace('1', '0').replace('2', '1');
+
+        System.out.println(Long.parseLong(binaryString, 2));
     }
 
     /**
-     * Several useful Collections functions.
+     * Useful Collections util functions.
      */
     @Test
     public void test10() {
@@ -215,16 +223,18 @@ public class CheatSheet {
         Collections.reverse(new ArrayList<Integer>());
     }
 
-
     /**
-     * we can use Integer.parseInteger("string", 2), Long.parseLong("string", 2) to convert string to Integer or Long.
+     * Useful Arrays util functions.
      */
-    public long flippingBits(long n) {
-        // Write your code here
-        String binaryString = String.format("%32s", Long.toBinaryString(n)).replace(' ', '0');
-        binaryString = binaryString.replace('0', '2').replace('1', '0').replace('2', '1');
+    @Test
+    public void test11() {
+        int[] ary = {5, 4, 3, 2, 1};
 
-        return Long.parseLong(binaryString, 2);
+        Arrays.sort(ary);
+        System.out.println(Arrays.toString(ary));
+        System.out.println(Arrays.binarySearch(ary, 2));
+        int[] newAry = Arrays.copyOfRange(ary, 3, 5);
+        System.out.println(Arrays.toString(newAry));
     }
 
     public void graphDFS(Node root) {

@@ -49,7 +49,7 @@ public class JesseAndCookies {
     }
 
     /**
-     * This solution is O(n*log(n)) cause creating the Heap needs O(n*log(n)) time.
+     * Heapify only takes O(n)
      *
      * @param k
      * @param A
