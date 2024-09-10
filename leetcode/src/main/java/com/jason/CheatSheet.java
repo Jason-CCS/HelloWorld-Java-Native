@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import java.util.*;
 
+import com.jason.DataStructure.*;
+
 public class CheatSheet {
     /**
      * 雜項
@@ -137,22 +139,109 @@ public class CheatSheet {
         }
     }
 
-    /**
-     * BFS
-     */
     @Test
     public void test7() {
-        // BFS
-        Queue<DataStructure.Node> queue = new LinkedList<>();
+        // Write your code here
+        String s = "05:05:05PM";
+        String result;
+        if (s.endsWith("AM")) {
+            String[] splits = s.replace("AM", "").split(":");
+            result = splits[0].replace("12", "00") + ":" + splits[1] + ":" + splits[2];
+        } else {
+            String[] splits = s.replace("PM", "").split(":");
+            if (!splits[0].equals("12")) {
+                splits[0] = String.valueOf(Integer.parseInt(splits[0]) + 12);
+            }
+            result = splits[0] + ":" + splits[1] + ":" + splits[2];
+        }
 
+        System.out.println(result);
+    }
+
+    /**
+     * Graph BFS
+     */
+    @Test
+    public void test8() {
+        // BFS
+        Queue<Node> queue = new LinkedList<>();
+        Node root = new Node(0);
+        queue.add(root);
+        root.marked = true;
+
+        int level = 0;
+        // check
+        while (!queue.isEmpty()) {
+            // visited
+            Node curr = queue.poll();
+            level = curr.level;
+
+            // put into Queue for traversal
+            for (Node neighbor : curr.getNeighbors()) {
+                if (!neighbor.marked) {
+                    neighbor.marked = true;
+                    neighbor.level = level + 1;
+                    queue.offer(neighbor);
+                }
+            }
+        }
+    }
+
+    /**
+     * bits operation.
+     * Flip the bits.
+     * Parse integer and long to binary string, and convert it back.
+     */
+    @Test
+    public void test9() {
+        System.out.println(flippingBits(9));
+    }
+
+    /**
+     * Several useful Collections functions.
+     */
+    @Test
+    public void test10() {
+        int maxValue = Collections.max(new ArrayList<>());
+        int minValue = Collections.min(new ArrayList<>());
+
+        Collections.sort(new ArrayList<Integer>());
+        Collections.binarySearch(new ArrayList<Integer>(), 123, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1 - o2;
+            }
+        });
+        Collections.reverse(new ArrayList<Integer>());
+    }
+
+
+    /**
+     * we can use Integer.parseInteger("string", 2), Long.parseLong("string", 2) to convert string to Integer or Long.
+     */
+    public long flippingBits(long n) {
+        // Write your code here
+        String binaryString = String.format("%32s", Long.toBinaryString(n)).replace(' ', '0');
+        binaryString = binaryString.replace('0', '2').replace('1', '0').replace('2', '1');
+
+        return Long.parseLong(binaryString, 2);
+    }
+
+    public void graphDFS(Node root) {
+        // check
+        if (root != null) {
+            // visited
+            root.visited = true;
+
+            for (Node neighbor : root.getNeighbors()) {
+                if (!neighbor.visited)
+                    graphDFS(neighbor);
+            }
+        }
     }
 
     /**
      * Binary Search Pattern
-     *
-     * @param nums
-     * @param target
-     * @return
      */
     public int binarySearch(int[] nums, int target) {
         int left = 0;

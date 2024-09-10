@@ -1,7 +1,5 @@
 package com.jason;
 
-import com.jason.hack_rank.ShortestReach;
-
 import java.util.*;
 
 /**
@@ -67,6 +65,10 @@ public class DataStructure {
     static class Node {
         public final int key;
         public List<Node> neighbors;
+        public boolean visited = false;
+        public boolean marked = false;
+        public int level;
+        public int distance = -1;
 
         public Node(int key) {
             this.key = key;
