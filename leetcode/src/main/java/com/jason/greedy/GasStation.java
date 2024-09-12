@@ -59,7 +59,7 @@ public class GasStation {
         for (int i = 0; i < gas.length; i++) {
             int net = gas[i] - cost[i];
             totalSum += net;
-            if (net >= 0 && startIdx == -1) { // set local optimal
+            if (net >= 0 && startIdx == -1) { // set local optimal，成功開始，又累積和accSum以及全部和totalSum大於等於0
                 startIdx = i;
             }
             if (startIdx != -1) {
