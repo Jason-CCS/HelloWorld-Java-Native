@@ -3,6 +3,8 @@ package com.jason.dp;
 /**
  * Problem: 746
  * Difficulty: Easy
+ * The problem is intended to find the minimum cost to climb a set of stairs where each step has a cost, and next step
+ * you can choose one step or two step jump.
  */
 public class MinCostClimbingStairs {
     public int minCostClimbingStairs(int[] cost) {
@@ -36,6 +38,7 @@ public class MinCostClimbingStairs {
      * Space complexity is O(n):
      * We allocate n-sized dp array, and the deepest function call is deep to nth level stack.
      * So the space complexity is O(n) too.
+     *
      * @param i
      * @param cost
      * @param dp
@@ -50,5 +53,45 @@ public class MinCostClimbingStairs {
         }
 
         return dp[i];
+    }
+
+    /**
+     * time is O(n).
+     * space is O(1).
+     * @param cost
+     * @return
+     */
+    public int minCostClimbingStairs2(int[] cost) {
+        /**
+         * Example: [10,15,20]
+         * Approach: Greedy, minSum(i) = min(minSum(i-1)+cost[i-1], minSum(i-2)+cost[i-2])
+         * Pseudo code:
+         * base case: minSum(0)=0, minSum(1)=0
+         * if cost.length <= 2:
+         *   return 0;
+         *
+         * // when you are at the i stair, you are only either from the last step or the last two step.
+         * // so you can simply compare them by min(the cost from the last step, the cost from the last two step).
+         * declare p1=minSum(1)=0, p2=minSum(0)=0 // p1 is the cost from the last step, and p2 is the cost from the last two steps.
+         *
+         * for i=2 till n:
+         *   minSum = min(p1+cost[i-1], p2+cost[i-2])
+         *   p2 = p1
+         *   p1 = minSum
+         * end
+         *
+         * i=2, minSum=min(0+15, 0+10)=10, p2=0, p1=10
+         * i=3, minSum=min(10+20, 0+15)=15, p2=10, p1=15
+         * return minSum(3)=15;
+         */
+        int p1 = 0;
+        int p2 = 0;
+        int minSum = 0;
+        for (int i = 2; i <= cost.length; i++) {
+            minSum = Math.min(p1 + cost[i - 1], p2 + cost[i - 2]);
+            p2 = p1;
+            p1 = minSum;
+        }
+        return minSum;
     }
 }
