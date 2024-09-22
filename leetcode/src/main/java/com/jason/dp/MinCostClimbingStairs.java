@@ -7,26 +7,28 @@ package com.jason.dp;
  * you can choose one step or two step jump.
  */
 public class MinCostClimbingStairs {
+    /**
+     * Pseudo Code and explanation.
+     * Example: [10,15,20]
+     * Approach:
+     * result = min(oneStepCostSum, twoStepCostSum)
+     * <p>
+     * i = current index, cost[] is the cost array.
+     * <p>
+     * minSumCost(i, cost[]) => minSum:
+     * if(i>=cost.length) return 0;
+     * if(dp[i]!=0) return dp[i]
+     * <p>
+     * dp[i] = cost[i] + min(minSumCost(i+1, cost), minSumCost(i+2, cost));
+     * return dp[i];
+     * <p>
+     * Dry Run:
+     * i=0, dp[0] = minSum = cost[0] + min(helper(1), helper(2)) = cost[0] + min(15, 20) = 10 + 15 = 25;
+     * i=1, dp[1] = minSum = cost[1] + min(helper(2), helper(3)) = 15+ min(20, 0) = 15;
+     * i=2, dp[2] = minSum = cost[2] + min(helper(3), helper(4)) = 20 + 0;
+     * i=1, dp[1] = minSum = cost[1] + min(helper(2), helper(3)) = 15 + min(20, 0) = 15;
+     */
     public int minCostClimbingStairs(int[] cost) {
-        /**
-         * Pseudo Code and explanation.
-         * Example: [10,15,20]
-         * result = min(oneStepCostSum, twoStepCostSum)
-         *
-         * i = current index, cost[] is the cost array.
-         *
-         * minSumCost(i, cost[]) => minSum:
-         *   if(i>=cost.length) return 0;
-         *   if(dp[i]!=0) return dp[i]
-         *
-         *   dp[i] = cost[i] + min(minSumCost(i+1, cost), minSumCost(i+2, cost));
-         *   return dp[i];
-         *
-         *   i=0, dp[0] = minSum = cost[0] + min(helper(1), helper(2)) = cost[0] + min(15, 20) = 10 + 15 = 25;
-         *      i=1, dp[1] = minSum = cost[1] + min(helper(2), helper(3)) = 15+ min(20, 0) = 15;
-         *      i=2, dp[2] = minSum = cost[2] + min(helper(3), helper(4)) = 20 + 0;
-         *   i=1, dp[1] = minSum = cost[1] + min(helper(2), helper(3)) = 15 + min(20, 0) = 15;
-         */
         int[] dp = new int[cost.length];
         return Math.min(minSumCost(0, cost, dp), minSumCost(1, cost, dp));
     }
@@ -58,6 +60,7 @@ public class MinCostClimbingStairs {
     /**
      * time is O(n).
      * space is O(1).
+     *
      * @param cost
      * @return
      */
@@ -65,13 +68,13 @@ public class MinCostClimbingStairs {
         /**
          * Example: [10,15,20]
          * Approach: Greedy, minSum(i) = min(minSum(i-1)+cost[i-1], minSum(i-2)+cost[i-2])
-         * Pseudo code:
+         * Pseudocode:
          * base case: minSum(0)=0, minSum(1)=0
          * if cost.length <= 2:
          *   return 0;
          *
-         * // when you are at the i stair, you are only either from the last step or the last two step.
-         * // so you can simply compare them by min(the cost from the last step, the cost from the last two step).
+         * when you are at the i stair, you are only either from the last step or the last two step.
+         * so you can simply compare them by min(the cost from the last step, the cost from the last two step).
          * declare p1=minSum(1)=0, p2=minSum(0)=0 // p1 is the cost from the last step, and p2 is the cost from the last two steps.
          *
          * for i=2 till n:
@@ -80,6 +83,7 @@ public class MinCostClimbingStairs {
          *   p1 = minSum
          * end
          *
+         * Dry Run:
          * i=2, minSum=min(0+15, 0+10)=10, p2=0, p1=10
          * i=3, minSum=min(10+20, 0+15)=15, p2=10, p1=15
          * return minSum(3)=15;
