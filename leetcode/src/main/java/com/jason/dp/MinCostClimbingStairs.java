@@ -58,36 +58,30 @@ public class MinCostClimbingStairs {
     }
 
     /**
-     * time is O(n).
-     * space is O(1).
+     * Example: [10,15,20]<br>
+     * Approach: Greedy, minSum(i) = min(minSum(i-1)+cost[i-1], minSum(i-2)+cost[i-2])<br>
+     * Pseudocode:<br>
+     * base case: minSum(0)=0, minSum(1)=0<br>
+     * if cost.length <= 2:
+     *   return 0;
      *
-     * @param cost
-     * @return
+     * when you are at the i stair, you are only either from the last step or the last two step.<br>
+     * so you can simply compare them by min(the cost from the last step, the cost from the last two step).<br>
+     * declare p1=minSum(1)=0, p2=minSum(0)=0 // p1 is the cost from the last step, and p2 is the cost from the last two steps.<br>
+     *
+     * for i=2 till n:
+     *   minSum = min(p1+cost[i-1], p2+cost[i-2])
+     *   p2 = p1
+     *   p1 = minSum
+     * end
+     *
+     * Dry Run:
+     * i=2, minSum=min(0+15, 0+10)=10, p2=0, p1=10
+     * i=3, minSum=min(10+20, 0+15)=15, p2=10, p1=15
+     * return minSum(3)=15;
      */
     public int minCostClimbingStairs2(int[] cost) {
-        /**
-         * Example: [10,15,20]
-         * Approach: Greedy, minSum(i) = min(minSum(i-1)+cost[i-1], minSum(i-2)+cost[i-2])
-         * Pseudocode:
-         * base case: minSum(0)=0, minSum(1)=0
-         * if cost.length <= 2:
-         *   return 0;
-         *
-         * when you are at the i stair, you are only either from the last step or the last two step.
-         * so you can simply compare them by min(the cost from the last step, the cost from the last two step).
-         * declare p1=minSum(1)=0, p2=minSum(0)=0 // p1 is the cost from the last step, and p2 is the cost from the last two steps.
-         *
-         * for i=2 till n:
-         *   minSum = min(p1+cost[i-1], p2+cost[i-2])
-         *   p2 = p1
-         *   p1 = minSum
-         * end
-         *
-         * Dry Run:
-         * i=2, minSum=min(0+15, 0+10)=10, p2=0, p1=10
-         * i=3, minSum=min(10+20, 0+15)=15, p2=10, p1=15
-         * return minSum(3)=15;
-         */
+
         int p1 = 0;
         int p2 = 0;
         int minSum = 0;
