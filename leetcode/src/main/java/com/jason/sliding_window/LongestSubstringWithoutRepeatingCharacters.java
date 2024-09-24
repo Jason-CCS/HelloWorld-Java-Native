@@ -25,7 +25,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
         LongestSubstringWithoutRepeatingCharacters solution = new LongestSubstringWithoutRepeatingCharacters();
         String test1 = "abcabcbb";
         String test2 = "bbbbb";
-        String test3 = "pwwkew";
+        String test3 = "abba"; // this is the special case we have to take care.
         String test4 = "172-3948j-naduh-f6a934jr;lasdfkh1-2893y9ha.sdnvads9ufy-198239ujdianskjdnv-1y34-r98zdsfhpwe8ey-183-49879efhakjdsajd f sdf13098jfojdsvpaiy";
         System.out.println(solution.lengthOfLongestSubstring(test1));
         System.out.println(solution.lengthOfLongestSubstring(test2));
